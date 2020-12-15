@@ -20,5 +20,17 @@ void Wall (void);
 void load(void);
 int main_menu(void);
 void instructions(void);
+void gotoxy(int x, int y);
+void GotoXY(int x,int y);
+
+struct coordinate{
+    int x;
+    int y;
+    int direction;
+};
+
+typedef struct coordinate coordinate;
+
+coordinate Head, turn[500],food,body[30];
 
 #endif /* SNAKE_H_ */
