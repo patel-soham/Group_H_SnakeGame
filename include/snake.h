@@ -11,6 +11,11 @@
 #include <windows.h>
 #include <process.h>
 
+#define UP 72
+#define DOWN 80
+#define LEFT 75
+#define RIGHT 77
+
 #define GA_XL 5
 #define GA_XR 80
 #define GA_YT 5
@@ -28,6 +33,13 @@ void Delay(void);
 void ExitGame(void);
 int Score_display(void);
 void game(void);
+void Go_Down(void);
+void Go_Left(void);
+void Go_Up(void);
+void Go_Right(void);
+void Turn(void);
+void Snake(void);
+
 
 struct coordinate{
     int x;
