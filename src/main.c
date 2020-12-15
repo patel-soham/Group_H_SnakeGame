@@ -213,3 +213,265 @@ void ExitGame(void)
 
     }
 }
+void Go_Up()
+{
+   int i;
+   for(i=0;i<=(turn[turn_no].y-Head.y)&&len<length;i++)
+   {
+       GotoXY(Head.x,Head.y+i);
+       {
+           if(len==0)
+               printf("^");
+           else
+               printf("*");
+       }
+       body[len].x=Head.x;
+       body[len].y=Head.y+i;
+       len++;
+   }
+   Turn();
+   if(!kbhit())
+       Head.y--;
+}
+void Go_Down()
+{
+    int i;
+    for(i=0;i<=(Head.y-turn[turn_no].y)&&len<length;i++)
+    {
+        GotoXY(Head.x,Head.y-i);
+        {
+            if(len==0)
+                printf("v");
+            else
+                printf("*");
+        }
+        body[len].x=Head.x;
+        body[len].y=Head.y-i;
+        len++;
+    }
+    Turn();
+    if(!kbhit())
+        Head.y++;
+}
+void Go_Left()
+{
+    int i;
+    for(i=0;i<=(turn[turn_no].x-Head.x)&&len<length;i++)
+    {
+        GotoXY((Head.x+i),Head.y);
+       {
+                if(len==0)
+                    printf("<");
+                else
+                    printf("*");
+        }
+        body[len].x=Head.x+i;
+        body[len].y=Head.y;
+        len++;
+    }
+    Turn();
+    if(!kbhit())
+        Head.x--;
+
+}
+void Go_Right()
+{
+    int i;
+    for(i=0;i<=(Head.x-turn[turn_no].x)&&len<length;i++)
+    {
+        //GotoXY((Head.x-i),Head.y);
+        body[len].x=Head.x-i;
+        body[len].y=Head.y;
+        GotoXY(body[len].x,body[len].y);
+        {
+            if(len==0)
+                printf(">");
+            else
+                printf("*");
+        }
+        /*body[len].x=Head.x-i;
+        body[len].y=Head.y;*/
+        len++;
+    }
+    Turn();
+    if(!kbhit())
+        Head.x++;
+}
+void Turn()
+{
+    int i,j,diff;
+    for(i=turn_no;i>=0&&len<length;i--)
+    {
+            if(turn[i].x==turn[i-1].x)
+            {
+                diff=turn[i].y-turn[i-1].y;
+                if(diff<0)
+                    for(j=1;j<=(-diff);j++)
+                    {
+                        body[len].x=turn[i].x;
+                        body[len].y=turn[i].y+j;
+                        GotoXY(body[len].x,body[len].y);
+                        printf("*");
+                        len++;
+                        if(len==length)
+                            break;
+                    }
+                else if(diff>0)
+                    for(j=1;j<=diff;j++)
+                    {
+                        /*GotoXY(turn[i].x,(turn[i].y-j));
+                        printf("*");*/
+                        body[len].x=turn[i].x;
+                        body[len].y=turn[i].y-j;
+                        GotoXY(body[len].x,body[len].y);
+                        printf("*");
+                        len++;
+                        if(len==length)
+                            break;
+                    }
+            }
+        else if(turn[i].y==turn[i-1].y)
+        {
+            diff=turn[i].x-turn[i-1].x;
+            if(diff<0)
+                for(j=1;j<=(-diff)&&len<length;j++)
+                {
+                    /*GotoXY((turn[i].x+j),turn[i].y);
+                    printf("*");*/
+                    body[len].x=turn[i].x+j;
+                    body[len].y=turn[i].y;
+                    GotoXY(body[len].x,body[len].y);
+                        printf("*");
+                   len++;
+                   if(len==length)
+                           break;
+               }
+           else if(diff>0)
+               for(j=1;j<=diff&&len<length;j++)
+               {
+                   /*GotoXY((turn[i].x-j),turn[i].y);
+                   printf("*");*/
+                   body[len].x=turn[i].x-j;
+                   body[len].y=turn[i].y;
+                   GotoXY(body[len].x,body[len].y);
+                       printf("*");
+                   len++;
+                   if(len==length)
+                       break;
+               }
+       }
+   }
+}
+void Snake()
+{
+    int a,i;
+
+    do{
+
+        Food();
+        fflush(stdin);
+
+        len=0;
+
+        for(i=0;i<30;i++)
+
+        {
+
+            body[i].x=0;
+
+            body[i].y=0;
+
+            if(i==length)
+
+            break;
+
+        }
+
+        Delay();
+
+        Wall();
+        Score_display();
+
+        if(Head.direction==RIGHT)
+
+            Go_Right();
+
+        else if(Head.direction==LEFT)
+
+            Go_Left();
+
+        else if(Head.direction==DOWN)
+
+            Go_Down();
+
+        else if(Head.direction==UP)
+
+            Go_Up();
+
+        ExitGame();
+
+    }while(!kbhit());
+
+    a=getch();
+
+    if(a==27)
+
+    {
+
+        system("cls");
+
+        exit(0);
+
+    }
+    key=getch();
+
+    if((key==RIGHT&&Head.direction!=LEFT&&Head.direction!=RIGHT)||(key==LEFT&&Head.direction!=RIGHT&&Head.direction!=LEFT)||(key==UP&&Head.direction!=DOWN&&Head.direction!=UP)||(key==DOWN&&Head.direction!=UP&&Head.direction!=DOWN))
+
+    {
+
+        turn_no++;
+
+        turn[turn_no]=Head;
+
+        Head.direction=key;
+
+        if(key==UP)
+
+            Head.y--;
+
+        if(key==DOWN)
+
+            Head.y++;
+
+        if(key==RIGHT)
+
+            Head.x++;
+
+        if(key==LEFT)
+
+            Head.x--;
+
+        Snake();
+
+    }
+
+    else if(key==27)
+
+    {
+
+        system("cls");
+
+        exit(0);
+
+    }
+
+    else
+
+    {
+
+        printf("\a");// for making beep sound
+
+        Snake();
+
+    }
+}
