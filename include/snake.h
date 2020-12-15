@@ -25,6 +25,8 @@ void gotoxy(int,int);
 void GotoXY(int,int);
 void Food(void);
 void Delay(void);
+void ExitGame(void);
+int Score_display(void);
 
 struct coordinate{
     int x;
