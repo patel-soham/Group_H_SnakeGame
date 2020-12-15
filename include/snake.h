@@ -22,6 +22,11 @@
 #define GA_YB 30
 #define Game_delay 5000000
 
+int length;
+int turn_no;
+int len;
+char key;
+
 void Wall (void);
 void load(void);
 int main_menu(void);
