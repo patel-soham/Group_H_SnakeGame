@@ -87,3 +87,32 @@ void GotoXY(int x, int y) // to avoid game lag issues
     a = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleCursorPosition(a,b);
  }
+
+void Delay(void)
+{
+    long double i;
+    for(i=0;i<=(Game_delay);i++);// to slow down the game play
+}
+
+void Food(void)
+{
+    if(Head.x==food.x&&Head.y==food.y)
+    {
+        length++;
+        food.x=rand()%GA_XR;
+        if(food.x<=GA_XL)
+            food.x+=11;
+        food.y=rand()%GA_YB;
+        if(food.y<=GA_YT)
+            food.y+=11;
+    }
+    else if(food.x==0)/*to create food for the first time */
+    {
+        food.x=rand()%GA_XR;
+        if(food.x<=GA_XL)
+            food.x+=11;
+        food.y=rand()%GA_YB;
+        if(food.y<=GA_YT)
+            food.y+=11;
+    }
+}
