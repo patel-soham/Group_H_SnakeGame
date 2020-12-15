@@ -1,7 +1,64 @@
 #include "snake.h"
 
 int main(void){
+	game();
 	return 0;
+}
+
+void game(void)
+{
+    int i;
+    if(ret ==1)
+    {
+       system("cls");
+       turn_no = 0;
+       len =0;
+       for(i=0;i<500;i++)
+       {
+           turn[i].x =0;
+           turn[i].y =0;
+           turn[i].direction =0;
+       }
+       for(i=0;i<30;i++)
+       {
+           body[i].x =0;
+           body[i].y =0;
+           body[i].direction =0;
+       }
+    }
+   int mm;
+   l1:mm = main_menu();
+   if(mm == 3)
+		exit(0);
+    else if(mm == 2){
+            instructions();
+            goto l1;
+    }
+
+    else // mm = 1 i.e User wants to play game
+    {
+    system("cls");
+
+    load();
+
+    length=5;
+
+    Head.x=25;
+
+    Head.y=20;
+
+    Head.direction=RIGHT;
+
+    Wall();
+    Score_display();
+
+    Food(); //to generate food coordinates initially
+
+    turn[0]=Head;
+
+    Snake();   //initialing initial turn coordinate
+    }
+
 }
 
 void Wall(void)

@@ -27,6 +27,7 @@ void Food(void);
 void Delay(void);
 void ExitGame(void);
 int Score_display(void);
+void game(void);
 
 struct coordinate{
     int x;
