@@ -1,4 +1,36 @@
 #ifndef SNAKE_H_
 #define SNAKE_H_
 
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <time.h>
+#include <ctype.h>
+#include <time.h>
+#include <windows.h>
+#include <process.h>
+
+#define GA_XL 5
+#define GA_XR 80
+#define GA_YT 5
+#define GA_YB 30
+
+void Wall (void);
+void load(void);
+int main_menu(void);
+void instructions(void);
+void gotoxy(int x, int y);
+void GotoXY(int x,int y);
+
+struct coordinate{
+    int x;
+    int y;
+    int direction;
+};
+
+typedef struct coordinate coordinate;
+
+coordinate Head, turn[500],food,body[30];
+
 #endif /* SNAKE_H_ */
