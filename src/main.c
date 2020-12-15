@@ -64,3 +64,26 @@ void instructions()
     printf("\n\nPress any key to return main menu...");
     getch();
 }
+
+void gotoxy(int x, int y)
+{
+
+ COORD temp;
+
+ temp.X = x;
+
+ temp.Y = y;
+
+ SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), temp);
+
+}
+void GotoXY(int x, int y) // to avoid game lag issues
+{
+    HANDLE a;
+    COORD b;
+    fflush(stdout);
+    b.X = x;
+    b.Y = y;
+    a = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleCursorPosition(a,b);
+ }
