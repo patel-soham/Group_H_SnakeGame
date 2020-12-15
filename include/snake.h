@@ -17,5 +17,8 @@
 #define GA_YB 30
 
 void Wall (void);
+void load(void);
+int main_menu(void);
+void instructions(void);
 
 #endif /* SNAKE_H_ */
