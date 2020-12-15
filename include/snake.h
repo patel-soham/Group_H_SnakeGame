@@ -15,13 +15,16 @@
 #define GA_XR 80
 #define GA_YT 5
 #define GA_YB 30
+#define Game_delay 5000000
 
 void Wall (void);
 void load(void);
 int main_menu(void);
 void instructions(void);
-void gotoxy(int x, int y);
-void GotoXY(int x,int y);
+void gotoxy(int,int);
+void GotoXY(int,int);
+void Food(void);
+void Delay(void);
 
 struct coordinate{
     int x;
