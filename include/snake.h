@@ -26,6 +26,7 @@ int length;
 int turn_no;
 int len;
 char key;
+int ret;
 
 void Wall (void);
 void load(void);
