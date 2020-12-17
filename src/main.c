@@ -720,3 +720,25 @@ void show_high_score_by_level(int for_level,char levelname[]){
     }
     fclose(fp1);
 }
+int levelSelect(void){
+
+    int ch;
+    int i=3; // Max number of trials for input
+    do{
+        system("cls");
+        //printf("/////////////Welcome to the SNAKE GAME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\n");
+        printf("               Level Selection\n");
+        printf("1. Easy\n");
+        printf("2. Medium\n");
+        printf("3. Hard\n\n");
+
+        printf("    Please enter choice number : ");
+        scanf(" %d",&ch);
+        if(ch==1 || ch==3 || ch==2 )
+            return ch;
+    }while(i--);
+    system("cls");
+    printf("\n\tGame exit because of consecutive invalid inputs!\n\n");
+    exit(0);
+
+}
