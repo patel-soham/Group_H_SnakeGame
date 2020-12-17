@@ -4,7 +4,7 @@ int main()
 	game();
 	return 0;
 }
-int game()
+void game()
 {
     int i;
     if(ret)
@@ -85,7 +85,7 @@ int main_menu(void){
             return ch;
     }while(i--);
     system("cls");
-    printf("\n\tGame exit because of consecutive invalid inputs!\n\n");
+    printf("\n\tGame exit because of invalid input!\n\n");
     exit(0);
 }
 void load(){
@@ -334,7 +334,7 @@ void GotoXY(int x, int y) // to avoid game lag issues
 void Delay()
 {
     long double i;
-    int level_wise_delays[]={5000000,5000000,50000000};//Change If you add new levels or delete existing levels
+    int level_wise_delays[]={7000000,8000000,10000000};//Change If you add new levels or delete existing levels
     for(i=0;i<=(level_wise_delays[level-1]);i++);// to slow down the game play
 }
 void Go_Up()
