@@ -64,5 +64,6 @@ char * readline(FILE *fp, char *buffer);
 void update_data(void);
 void display_scorecard(void);
 void show_high_score_by_level(int for_level,char levelname[]);
+int levelSelect(void);
 
 #endif /* SNAKE_H_ */
