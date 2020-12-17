@@ -5,7 +5,6 @@
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <time.h>
 #include <ctype.h>
 #include <time.h>
 #include <windows.h>
@@ -20,13 +19,27 @@
 #define GA_XR 80
 #define GA_YT 5
 #define GA_YB 30
-#define Game_delay 5000000
+//#define Game_delay 5000000
+
+#define MAX_LEVEL 3
+#define depth 3 // input the total number of high score to show.
+
+struct coordinate{
+    int x;
+    int y;
+    int direction;
+};
+
+typedef struct coordinate coordinate;
+coordinate Head, turn[500],food,body[30];
 
 int length;
 int turn_no;
 int len;
-char key;
 int ret;
+int level;
+char key;
+char name[50];
 
 void Wall (void);
 void load(void);
@@ -45,16 +58,12 @@ void Go_Up(void);
 void Go_Right(void);
 void Turn(void);
 void Snake(void);
-
-
-struct coordinate{
-    int x;
-    int y;
-    int direction;
-};
-
-typedef struct coordinate coordinate;
-
-coordinate Head, turn[500],food,body[30];
+void username(void);
+void user_display(void);
+char * readline(FILE *fp, char *buffer);
+void update_data(void);
+void display_scorecard(void);
+void show_high_score_by_level(int for_level,char levelname[]);
+int levelSelect(void);
 
 #endif /* SNAKE_H_ */
