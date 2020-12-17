@@ -1,11 +1,13 @@
 #ifndef SNAKE_H_
 #define SNAKE_H_
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <windows.h>
 #include <process.h>
+
 #define UP 72
 #define DOWN 80
 #define LEFT 75
