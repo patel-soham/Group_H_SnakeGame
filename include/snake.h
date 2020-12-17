@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <conio.h>
 #include <ctype.h>
 #include <windows.h>
 #include <process.h>
@@ -19,7 +18,6 @@
 #define GA_YT 5
 #define GA_YB 30
 //#define Game_delay 5000000
-
 #define MAX_LEVEL 3
 #define depth 3 // input the total number of high score to show.
 
@@ -40,23 +38,23 @@ int level;
 char key;
 char name[50];
 
-void Wall (void);
-void load(void);
+void game(void);
 int main_menu(void);
+void load(void);
 void instructions(void);
+void Wall (void);
+void Food(void);
+void Snake(void);
 void gotoxy(int,int);
 void GotoXY(int,int);
-void Food(void);
 void Delay(void);
-void ExitGame(void);
-int Score_display(void);
-void game(void);
+void Go_Up(void);
 void Go_Down(void);
 void Go_Left(void);
-void Go_Up(void);
 void Go_Right(void);
 void Turn(void);
-void Snake(void);
+int Score_display(void);
+void ExitGame(void);
 void username(void);
 void user_display(void);
 char * readline(FILE *fp, char *buffer);
