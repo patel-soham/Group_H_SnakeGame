@@ -4,15 +4,15 @@ int main(void){
     length=0;
     turn_no=0;
     len=0;
-    ret=0;
+    flg=0;
     level=0;
     game();
     return 0;
 }
 void game(void){
     int i;
-    if(ret){
-       ret=0;
+    if(flg==1){
+       flg=0;
        system("cls");
        turn_no = 0;
        len = 0;
@@ -27,42 +27,42 @@ void game(void){
            body[i].direction =0;
        }
     }
-    int mm;
-    l1:mm = main_menu();
-    if(mm == 4){
+    int option;
+    l1:option = main_menu();
+    if(option==4){
         exit(0);
     }
-    else if(mm == 2){
+    else if(option==2){
         instructions();
         goto l1;
     }
-    else if(mm==3){
+    else if(option==3){
         display_scorecard();
         goto l1;
     }
-    else{ // mm = 1 i.e User wants to play game
+    else{ // option = 1 i.e User wants to play game
         system("cls");
         username();
         printf("\n%s",name);
         system("cls");
-        level=levelSelect();
+        level=level_select();
         system("cls");
         load();
         length=5;
         Head.x=25;
         Head.y=20;
         Head.direction=RIGHT;
-        Wall();
-        Score_display();
+        wall();
+        score_display();
         user_display();
-        Food(); //to generate food coordinates initially
+        food(); //to generate food coordinates initially
         turn[0]=Head;
-        Snake();   //initialing initial turn coordinate
+        snake();   //initialing initial turn coordinate
     }
 }
 int main_menu(void){
-    int ch;
-    int i=3; // Max number of trials for input
+    int option;
+    int max_trials=3; // Max number of trials for input
     do{
         system("cls");
         printf("/////////////Welcome to the SNAKE GAME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\n");
@@ -72,11 +72,11 @@ int main_menu(void){
         printf("3. Scorecard\n");
         printf("4. Exit\n\n\n");
         printf("    Please enter choice number : ");
-        scanf(" %d",&ch);
-        if(ch==1 || ch==3 || ch==2 || ch==4 ){
-            return ch;
+        scanf(" %d",&option);
+        if(option==1 || option==3 || option==2 || option==4 ){
+            return option;
         }
-    }while(i--);
+    }while(max_trials--);
     system("cls");
     printf("\n\tGame exit because of consecutive invalid inputs!\n\n");
     exit(0);
@@ -99,78 +99,78 @@ void instructions(void){
     printf("\n\nPress any key to return main menu...");
     getch();
 }
-void Wall(void){
+void wall(void){
     system("cls");
     int i;//wall_length=0;
-    GotoXY(food.x,food.y);   /*displaying food*/
+    goto_xy(food_location.x,food_location.y);   /*displaying food*/
     printf("O");
     for(i=GA_XL;i<=GA_XR;i++){
-        GotoXY(i,GA_YT);
+        goto_xy(i,GA_YT);
         printf("%c",176);
-        GotoXY(i,GA_YB);
+        goto_xy(i,GA_YB);
         printf("%c",176);
     }
     for(i=GA_YT+1;i<=GA_YB;i++){
-        GotoXY(GA_XL,i);
+        goto_xy(GA_XL,i);
         printf("%c",176);
-        GotoXY(GA_XR,i);
+        goto_xy(GA_XR,i);
         printf("%c",176);
     }
     if(level==2){
         for(i=24;i<=56;i++){ //STATIC FOR LEVEL 2
-            GotoXY(i,11);
+            goto_xy(i,11);
             printf("%c",'$');
-            GotoXY(i,24);
+            goto_xy(i,24);
             printf("%c",'$');
         }
     }
     if(level==3){
         for(i=25;i<=60;i++){ //STATIC FOR LEVEL 3
-            GotoXY(i,10);
+            goto_xy(i,10);
             printf("%c",'$');
-            GotoXY(i,23);
+            goto_xy(i,23);
             printf("%c",'$');
         }
         for(i=15;i<=18;i++){
-            GotoXY(18,i);
+            goto_xy(18,i);
             printf("%c",'$');
-            GotoXY(67,i);
+            goto_xy(67,i);
             printf("%c",'$');
         }
     }
 }
-void Food(void){
-    label1:
-    if(Head.x==food.x&&Head.y==food.y){
+void food(void){
+    l2:
+    if(Head.x==food_location.x&&Head.y==food_location.y){
         length++;
-        food.x=rand()%GA_XR;
-        if(food.x<=GA_XL){
-            food.x+=11;
+        food_location.x=rand()%GA_XR;
+        if(food_location.x<=GA_XL){
+            food_location.x+=11;
         }
-        food.y=rand()%GA_YB;
-        if(food.y<=GA_YT){
-            food.y+=11;
+        food_location.y=rand()%GA_YB;
+        if(food_location.y<=GA_YT){
+            food_location.y+=11;
         }
     }
-    else if(food.x==0){/*to create food for the first time */
-        food.x=rand()%GA_XR;
-        if(food.x<=GA_XL){
-            food.x+=11;
+    else if(food_location.x==0){/*to create food for the first time */
+        food_location.x=rand()%GA_XR;
+        if(food_location.x<=GA_XL){
+            food_location.x+=11;
         }
-        food.y=rand()%GA_YB;
-        if(food.y<=GA_YT){
-            food.y+=11;
+        food_location.y=rand()%GA_YB;
+        if(food_location.y<=GA_YT){
+            food_location.y+=11;
         }
     }
     //checking
-    if ((level==2 && food.x>=24 && food.x<=56 && (food.y==11 || food.y==24)) || (level==3 && food.x>=25 && food.x<=60 && (food.y==10 || food.y==23))|| (level==3 && food.y>=15 && food.y<=18 && (food.x==18 || food.x==67))){
-        goto label1;
+    if ((level==2 && food_location.x>=24 && food_location.x<=56 && (food_location.y==11 || food_location.y==24)) || (level==3 && food_location.x>=25 && food_location.x<=60 && (food_location.y==10 || food_location.y==23))|| (level==3 && food_location.y>=15 && food_location.y<=18 && (food_location.x==18 || food_location.x==67))){
+        goto l2;
     }
 }
-void Snake(void){
-    int a,i;
+void snake(void){
+    int ch,i;
     do{
-        Food();
+        food();
         fflush(stdin);
         len=0;
         for(i=0;i<30;i++){
@@ -180,26 +180,26 @@ void Snake(void){
                 break;
             }
         }
-        Delay();
-        Wall();
-        Score_display();
+        delay();
+        wall();
+        score_display();
         user_display();
         if(Head.direction==RIGHT){
-            Go_Right();
+            go_right();
         }
         else if(Head.direction==LEFT){
-            Go_Left();
+            go_left();
         }
         else if(Head.direction==DOWN){
-            Go_Down();
+            go_down();
         }
         else if(Head.direction==UP){
-            Go_Up();
+            go_up();
         }
-        ExitGame();
+        exit_game();
     }while(!kbhit());
-    a=getch();
-    if(a==27){
+    ch=getch();
+    if(ch==27){
         system("cls");
         exit(0);
     }
@@ -220,7 +220,7 @@ void Snake(void){
         if(key==LEFT){
             Head.x--;
         }
-        Snake();
+        snake();
     }
     else if(key==27){
         system("cls");
@@ -228,16 +228,16 @@ void Snake(void){
     }
     else{
         printf("\a");// for making beep sound
-        Snake();
+        snake();
     }
 }
 void gotoxy(int x, int y){
     COORD temp;
     temp.X = x;
     temp.Y = y;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), temp);
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),temp);
 }
-void GotoXY(int x, int y){ // to avoid game lag issues
+void goto_xy(int x, int y){ // to avoid game lag issues
     HANDLE a;
     COORD b;
     fflush(stdout);
@@ -246,15 +246,15 @@ void GotoXY(int x, int y){ // to avoid game lag issues
     a = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleCursorPosition(a,b);
 }
-void Delay(void){
+void delay(void){
     long double i;
-    int level_wise_delays[]={7000000,8000000,10000000};//Change If you add new levels or delete existing levels
+    int level_wise_delays[]={8000000,9000000,10000000};//Change If you add new levels or delete existing levels
     for(i=0;i<=(level_wise_delays[level-1]);i++);// to slow down the game play
 }
-void Go_Up(void){
+void go_up(void){
     int i;
     for(i=0;i<=(turn[turn_no].y-Head.y)&&len<length;i++){
-        GotoXY(Head.x,Head.y+i);
+        goto_xy(Head.x,Head.y+i);
         if(len==0){
             printf("^");
         }
@@ -265,15 +265,15 @@ void Go_Up(void){
         body[len].y=Head.y+i;
         len++;
     }
-    Turn();
+    steer();
     if(!kbhit()){
         Head.y--;
     }
 }
-void Go_Down(void){
+void go_down(void){
     int i;
     for(i=0;i<=(Head.y-turn[turn_no].y)&&len<length;i++){
-        GotoXY(Head.x,Head.y-i);
+        goto_xy(Head.x,Head.y-i);
         if(len==0){
             printf("v");
         }
@@ -284,15 +284,15 @@ void Go_Down(void){
         body[len].y=Head.y-i;
         len++;
     }
-    Turn();
+    steer();
     if(!kbhit()){
         Head.y++;
     }
 }
-void Go_Left(void){
+void go_left(void){
     int i;
     for(i=0;i<=(turn[turn_no].x-Head.x)&&len<length;i++){
-        GotoXY((Head.x+i),Head.y);
+        goto_xy((Head.x+i),Head.y);
         if(len==0){
             printf("<");
         }
@@ -303,18 +303,18 @@ void Go_Left(void){
         body[len].y=Head.y;
         len++;
     }
-    Turn();
+    steer();
     if(!kbhit()){
         Head.x--;
     }
 }
-void Go_Right(void){
+void go_right(void){
     int i;
     for(i=0;i<=(Head.x-turn[turn_no].x)&&len<length;i++){
-        //GotoXY((Head.x-i),Head.y);
+        //goto_xy((Head.x-i),Head.y);
         body[len].x=Head.x-i;
         body[len].y=Head.y;
-        GotoXY(body[len].x,body[len].y);
+        goto_xy(body[len].x,body[len].y);
         if(len==0){
             printf(">");
         }
@@ -325,12 +325,12 @@ void Go_Right(void){
         body[len].y=Head.y;*/
         len++;
     }
-    Turn();
+    steer();
     if(!kbhit()){
         Head.x++;
     }
 }
-void Turn(void){
+void steer(void){
     int i,j,diff;
     for(i=turn_no;i>=0&&len<length;i--){
         if(turn[i].x==turn[i-1].x){
@@ -339,7 +339,7 @@ void Turn(void){
                     for(j=1;j<=(-diff);j++){
                         body[len].x=turn[i].x;
                         body[len].y=turn[i].y+j;
-                        GotoXY(body[len].x,body[len].y);
+                        goto_xy(body[len].x,body[len].y);
                         printf("*");
                         len++;
                         if(len==length){
@@ -349,11 +349,11 @@ void Turn(void){
                 }
                 else if(diff>0){
                     for(j=1;j<=diff;j++){
-                        /*GotoXY(turn[i].x,(turn[i].y-j));
+                        /*goto_xy(turn[i].x,(turn[i].y-j));
                         printf("*");*/
                         body[len].x=turn[i].x;
                         body[len].y=turn[i].y-j;
-                        GotoXY(body[len].x,body[len].y);
+                        goto_xy(body[len].x,body[len].y);
                         printf("*");
                         len++;
                         if(len==length){
@@ -366,11 +366,11 @@ void Turn(void){
             diff=turn[i].x-turn[i-1].x;
             if(diff<0){
                 for(j=1;j<=(-diff)&&len<length;j++){
-                    /*GotoXY((turn[i].x+j),turn[i].y);
+                    /*goto_xy((turn[i].x+j),turn[i].y);
                     printf("*");*/
                     body[len].x=turn[i].x+j;
                     body[len].y=turn[i].y;
-                    GotoXY(body[len].x,body[len].y);
+                    goto_xy(body[len].x,body[len].y);
                     printf("*");
                     len++;
                     if(len==length){
@@ -380,11 +380,11 @@ void Turn(void){
             }
             else if(diff>0){
                 for(j=1;j<=diff&&len<length;j++){
-                    /*GotoXY((turn[i].x-j),turn[i].y);
+                    /*goto_xy((turn[i].x-j),turn[i].y);
                     printf("*");*/
                     body[len].x=turn[i].x-j;
                     body[len].y=turn[i].y;
-                    GotoXY(body[len].x,body[len].y);
+                    goto_xy(body[len].x,body[len].y);
                     printf("*");
                     len++;
                     if(len==length){
@@ -396,9 +396,9 @@ void Turn(void){
         }
     }
 }
-int Score_display(void){
+int score_display(void){
     int score;
-    GotoXY(GA_XR/2 -5,GA_YT-1);
+    goto_xy(60,4);
     score=length-5;
     if(score>=0){
         printf("SCORE : %d",score);
@@ -409,7 +409,7 @@ int Score_display(void){
     score=length-5;
     return score;
 }
-void ExitGame(void){
+void exit_game(void){
     int i,check=0;
     for(i=4;i<length;i++){   //starts with 4 because it needs minimum 4 element to touch its own body
         if(body[0].x==body[i].x&&body[0].y==body[i].y){
@@ -426,7 +426,7 @@ void ExitGame(void){
         update_data();
         printf("Press any key to return to Main Menu\n");
         getch();
-        ret = 1;
+        flg = 1;
         game();
     }
 }
@@ -435,10 +435,10 @@ void username(void){
     scanf("%s",&name);
 }
 void user_display(void){
-    GotoXY(GA_XR/2 -20,GA_YT-1);
+    goto_xy(GA_XR/2 -20,GA_YT-1);
     printf("user:%s",name);
 }
-char * readline(FILE *fp, char *buffer){
+char * read_line(FILE *fp, char *buffer){
     int ch;
     int i = 0;
     size_t buff_len = 0;
@@ -466,7 +466,7 @@ char * readline(FILE *fp, char *buffer){
     return buffer;
 }
 void update_data(void){
-    int MAX=255;
+    int max=255;
     FILE * fp1;
     FILE * fp2;
     char temp[] = "temp.txt";
@@ -479,8 +479,8 @@ void update_data(void){
     //current_line=0;
     int finding_name_flag=1;
     char *s;
-    while ((s = readline(fp1, 0)) != NULL){
-    char ds[MAX];
+    while ((s = read_line(fp1, 0)) != NULL){
+    char ds[max];
     strcpy(ds,s);
     //printf("%s",ds);
     char * token = strtok(s, " ");
@@ -512,7 +512,7 @@ void update_data(void){
         }
         //checking if current score is higher
         if(changed==1){
-            char newln[MAX];
+            char newln[max];
             strncpy(newln, "", sizeof(newln));
             strcat(newln,name);
             for(int i=0;i<MAX_LEVEL;i++){
@@ -537,7 +537,7 @@ void update_data(void){
     //printf("\n");
     }
     if (finding_name_flag==1){
-        char newln[MAX];
+        char newln[max];
         strncpy(newln, "", sizeof(s));
         strcat(newln,name);
         //#define MAX_LEVEL 3
@@ -567,7 +567,7 @@ void display_scorecard(void){
 }
 void show_high_score_by_level(int for_level,char levelname[]){
     printf("\n\nLevel-%s\n",levelname);
-    int MAX=255;
+    int max=255;
     FILE * fp1;
     char src[] = "data.txt";
     fp1 = fopen(src, "r");
@@ -576,16 +576,16 @@ void show_high_score_by_level(int for_level,char levelname[]){
         exit(EXIT_FAILURE);
     }
     //current_line=0;
-    int indices[depth]={0};
-    for (int i=0;i<depth;i++){
+    int indices[DEPTH]={0};
+    for (int i=0;i<DEPTH;i++){
         fseek(fp1, 0, SEEK_SET);
-        char bestPlayer[MAX];
-        int bestScore=-9999;
+        char best_player[max];
+        int best_score=-9999;
         int finding_name_flag=0;
-        int currentIndex=0;
+        int current_index=0;
         char *s;
         int line=0;
-        while ((s = readline(fp1, 0)) != NULL){
+        while ((s = read_line(fp1, 0)) != NULL){
             line++;
             int reject=0;
             for (int j=0;j<i;j++){
@@ -599,31 +599,31 @@ void show_high_score_by_level(int for_level,char levelname[]){
             if (reject){
                 continue;
             }
-            char currentName[MAX];
+            char current_name[max];
             char * token = strtok(s, " ");
-            strcpy(currentName,token);
+            strcpy(current_name,token);
             int extract=for_level;
             while(extract--){
                 token = strtok(NULL, " ");
             }
-            int currentScore = atoi(token);
-            if (currentScore>bestScore){
-                strcpy(bestPlayer,currentName);
-                bestScore=currentScore;
+            int current_score = atoi(token);
+            if (current_score>best_score){
+                strcpy(best_player,current_name);
+                best_score=current_score;
                 indices[i]=line;
                 finding_name_flag=1;
             }
-            free(s);free(currentName);
+            free(s);free(current_name);
         }
         if(finding_name_flag==1){
-            printf("\n %s : %d",bestPlayer,bestScore);
+            printf("\n %s : %d",best_player,best_score);
         }
     }
     fclose(fp1);
 }
-int levelSelect(void){
-    int ch;
-    int i=3; // Max number of trials for input
+int level_select(void){
+    int option;
+    int max_trials=3; // Max number of trials for input
     do{
         system("cls");
         //printf("/////////////Welcome to the SNAKE GAME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\n");
@@ -633,10 +633,10 @@ int levelSelect(void){
         printf("3. Hard\n\n");
 
         printf("    Please enter choice number : ");
-        scanf(" %d",&ch);
-        if(ch==1 || ch==3 || ch==2 )
-            return ch;
-    }while(i--);
+        scanf(" %d",&option);
+        if(option==1 || option==3 || option==2 )
+            return option;
+    }while(max_trials--);
     system("cls");
     printf("\n\tGame exit because of consecutive invalid inputs!\n\n");
     exit(0);
