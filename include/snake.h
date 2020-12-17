@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <ctype.h>
-#include <time.h>
 #include <windows.h>
 #include <process.h>
 

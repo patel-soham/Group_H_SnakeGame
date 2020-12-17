@@ -110,25 +110,67 @@ void Wall()
 {
    system("cls");
    int i;
+   //wall_length=0;
+
    GotoXY(food.x,food.y);   /*displaying food*/
        printf("O");
    for(i=GA_XL;i<=GA_XR;i++)
    {
        GotoXY(i,GA_YT);
            printf("%c",176);
+
+
        GotoXY(i,GA_YB);
            printf("%c",176);
+
    }
    for(i=GA_YT+1;i<=GA_YB;i++)
    {
        GotoXY(GA_XL,i);
            printf("%c",176);
+
        GotoXY(GA_XR,i);
-       printf("%c",176);
+           printf("%c",176);
    }
+
+   if  (level==2){
+   for(i=24;i<=56;i++) //STATIC FOR LEVEL 2
+   {
+       GotoXY(i,11);
+           printf("%c",'$');
+
+
+       GotoXY(i,24);
+           printf("%c",'$');
+
+   }
+   }
+   if (level==3){
+        for(i=25;i<=60;i++) //STATIC FOR LEVEL 3
+   {
+       GotoXY(i,10);
+           printf("%c",'$');
+
+
+       GotoXY(i,23);
+           printf("%c",'$');
+
+   }
+   for(i=15;i<=18;i++)
+   {
+       GotoXY(18,i);
+           printf("%c",'$');
+
+       GotoXY(67,i);
+           printf("%c",'$');
+   }
+
+   }
+
 }
 void Food()
 {
+    label1:
     if(Head.x==food.x&&Head.y==food.y)
     {
         length++;
@@ -147,6 +189,10 @@ void Food()
         food.y=rand()%GA_YB;
         if(food.y<=GA_YT)
             food.y+=11;
+    }
+    //checking
+    if ((level==2 && food.x>=24 && food.x<=56 && (food.y==11 || food.y==24)) || (level==3 && food.x>=25 && food.x<=60 && (food.y==10 || food.y==23))|| (level==3 && food.y>=15 && food.y<=18 && (food.x==18 || food.x==67))){
+        goto label1;
     }
 }
 void Snake()
