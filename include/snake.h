@@ -30,8 +30,8 @@
 #define GA_YT 5
 #define GA_YB 30
 #define MAX_LEVEL 3
-#define DEPTH 3 // input the total number of high score to show.
-//#define Game_delay 5000000
+/* Input the total number of high score to show */
+#define DEPTH 3
 
 /**  @brief Structure define to store coordinates and direction.
 *
@@ -104,14 +104,14 @@ void snake(void);
 
 /**  @brief Function prototype to move the cursor to specific position
 *
-* This Function places cursor at given coordinate position and takes Input parameters are x-coordinate and y-coordinate
+* This Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
 *
 */
 void gotoxy(int,int);
 
 /**  @brief Function prototype to move the cursor to specific position
 *
-* This Function places cursor at given coordinate position and takes Input parameters are x-coordinate and y-coordinate
+* This Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
 *
 */
 void goto_xy(int,int);
