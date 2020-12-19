@@ -1,0 +1,614 @@
+\hypertarget{snake_8h}{}\doxysection{snake.\+h File Reference}
+\label{snake_8h}\index{snake.h@{snake.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$process.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcoordinate}{coordinate}}
+\begin{DoxyCompactList}\small\item\em Structure define to store coordinates and direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{snake_8h_a1965eaca47dbf3f87acdafc2208f04eb}{UP}}~72
+\begin{DoxyCompactList}\small\item\em Macros constants defined that are used throughout the code. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{snake_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}{D\+O\+WN}}~80
+\item 
+\#define \mbox{\hyperlink{snake_8h_a437ef08681e7210d6678427030446a54}{L\+E\+FT}}~75
+\item 
+\#define \mbox{\hyperlink{snake_8h_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}}~77
+\item 
+\#define \mbox{\hyperlink{snake_8h_a26daef95e0f252123eb1000a0f779dfb}{G\+A\+\_\+\+XL}}~5
+\item 
+\#define \mbox{\hyperlink{snake_8h_a9da9813648ede30b2e2fdab93eb91431}{G\+A\+\_\+\+XR}}~80
+\item 
+\#define \mbox{\hyperlink{snake_8h_aece5497a579151a07721d5ddc9873e23}{G\+A\+\_\+\+YT}}~5
+\item 
+\#define \mbox{\hyperlink{snake_8h_a95d5b03ae9fcf829945e41fa34305890}{G\+A\+\_\+\+YB}}~30
+\item 
+\#define \mbox{\hyperlink{snake_8h_a5bb4257ca9fa4bfcf9391b7895b97761}{M\+A\+X\+\_\+\+L\+E\+V\+EL}}~3
+\item 
+\#define \mbox{\hyperlink{snake_8h_a50267d552ca6f788254032e40046b770}{D\+E\+P\+TH}}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structcoordinate}{coordinate}} \mbox{\hyperlink{snake_8h_ac0e5b7b5b4d698de3f31f6644ca0a94e}{coordinate}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{snake_8h_a27113921347a82199b52e4f2ee16985c}{game}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to call the major functions and helps in the game play. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{snake_8h_a219c351c9f40d16f05553c99a3b7e378}{main\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to print main menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a11d83bf35f0346e4f579df0257171252}{load}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to print the loading screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a5b2a08d249b80025a6d527f2c6d55255}{instructions}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to print insructions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a785d1036b66ff863c2e841fe9aeb7641}{wall}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to display the defined boundary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a7b1e0cd68f48011ba7d4f94d0d1411a5}{food}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to add food in the play area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a5247d7a062caccd090a7a0c63ff21a70}{snake}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype calls other functions to move the snake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a469646ef528afb750a06c95280797c59}{gotoxy}} (int, int)
+\begin{DoxyCompactList}\small\item\em Function prototype to move the cursor to specific position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a6748407c7eecc0cb6c8cd5108b9138d6}{goto\+\_\+xy}} (int, int)
+\begin{DoxyCompactList}\small\item\em Function prototype to move the cursor to specific position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a341d33c536d663703208ab568f7d1e0e}{delay}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to control the game play speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_ae1dcae83581b3a2f7192f6edb71dd46a}{go\+\_\+up}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to set the movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_aabcee42f6dcb76a82b739a87c5ba0b56}{go\+\_\+down}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to set the movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_aa0222a65b5ab33b7f8c6909de0507790}{go\+\_\+left}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to set the movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a1b1412fa5a776db37bdcdc23b29f7698}{go\+\_\+right}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to set the movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_ac13ab8fc95fa47cc574dfc1faef020cb}{steer}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to turn. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{snake_8h_a07a67d5a9e6f123a10846a17efbbe39f}{score\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to print the live score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_ad4f7d9fb0cfbf57a07e2d383f57fe83e}{exit\+\_\+game}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to exit the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a4bb5e3369395579d0ac078b34f09d4b3}{username}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to input the Player name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_ab98fb7342c79dcdc77bd4cff7a4c365a}{user\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype prints the User name in the game. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{snake_8h_af7ee908605e816a3649c508395fd5509}{read\+\_\+line}} (F\+I\+LE $\ast$fp, char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Function prototype to read score data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a701c2033e67037e3b5c490b8657dd3c8}{update\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to write score data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_a04b6f773d8ae926a374397679e5f0cc3}{display\+\_\+scorecard}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to print the levels to display score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snake_8h_aedb18e254f5a1911705ef8552918294e}{show\+\_\+high\+\_\+score\+\_\+by\+\_\+level}} (int for\+\_\+level, char levelname\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function prototype to print the score data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{snake_8h_ae2805afc2abfc8396c26f9f93d047a59}{level\+\_\+select}} (void)
+\begin{DoxyCompactList}\small\item\em Function prototype to print the levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcoordinate}{coordinate}} \mbox{\hyperlink{snake_8h_abe8d06e1e512add0a7806aaf6395349c}{Head}}
+\item 
+\mbox{\hyperlink{structcoordinate}{coordinate}} \mbox{\hyperlink{snake_8h_a0bbc92c9c344d9c50aa438c4f597fa5d}{turn}} \mbox{[}500\mbox{]}
+\item 
+\mbox{\hyperlink{structcoordinate}{coordinate}} \mbox{\hyperlink{snake_8h_a06df0607f7760cff9d77c7579f9f8a33}{food\+\_\+location}}
+\item 
+\mbox{\hyperlink{structcoordinate}{coordinate}} \mbox{\hyperlink{snake_8h_a54ce08adae86f9b0fe42b9c55b544a4c}{body}} \mbox{[}30\mbox{]}
+\item 
+int \mbox{\hyperlink{snake_8h_a9f59b34b1f25fe00023291b678246bcc}{length}}
+\item 
+int \mbox{\hyperlink{snake_8h_aa7e337a4c819594fdc15291afc061428}{turn\+\_\+no}}
+\item 
+int \mbox{\hyperlink{snake_8h_afed088663f8704004425cdae2120b9b3}{len}}
+\item 
+int \mbox{\hyperlink{snake_8h_a6161fc1baccb04d46d3b3fe3521bb48f}{flg}}
+\item 
+int \mbox{\hyperlink{snake_8h_acf4d33ee4cff36f69b924471174dcb11}{level}}
+\item 
+char \mbox{\hyperlink{snake_8h_acad36f7a1211e9e9da68e181667d9c3f}{key}}
+\item 
+char \mbox{\hyperlink{snake_8h_ae5cb967283dbbdf75cb2032c1fa08fee}{name}} \mbox{[}50\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{snake_8h_a50267d552ca6f788254032e40046b770}\label{snake_8h_a50267d552ca6f788254032e40046b770}} 
+\index{snake.h@{snake.h}!DEPTH@{DEPTH}}
+\index{DEPTH@{DEPTH}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{DEPTH}{DEPTH}}
+{\footnotesize\ttfamily \#define D\+E\+P\+TH~3}
+
+\mbox{\Hypertarget{snake_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}\label{snake_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}} 
+\index{snake.h@{snake.h}!DOWN@{DOWN}}
+\index{DOWN@{DOWN}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{DOWN}{DOWN}}
+{\footnotesize\ttfamily \#define D\+O\+WN~80}
+
+\mbox{\Hypertarget{snake_8h_a26daef95e0f252123eb1000a0f779dfb}\label{snake_8h_a26daef95e0f252123eb1000a0f779dfb}} 
+\index{snake.h@{snake.h}!GA\_XL@{GA\_XL}}
+\index{GA\_XL@{GA\_XL}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{GA\_XL}{GA\_XL}}
+{\footnotesize\ttfamily \#define G\+A\+\_\+\+XL~5}
+
+\mbox{\Hypertarget{snake_8h_a9da9813648ede30b2e2fdab93eb91431}\label{snake_8h_a9da9813648ede30b2e2fdab93eb91431}} 
+\index{snake.h@{snake.h}!GA\_XR@{GA\_XR}}
+\index{GA\_XR@{GA\_XR}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{GA\_XR}{GA\_XR}}
+{\footnotesize\ttfamily \#define G\+A\+\_\+\+XR~80}
+
+\mbox{\Hypertarget{snake_8h_a95d5b03ae9fcf829945e41fa34305890}\label{snake_8h_a95d5b03ae9fcf829945e41fa34305890}} 
+\index{snake.h@{snake.h}!GA\_YB@{GA\_YB}}
+\index{GA\_YB@{GA\_YB}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{GA\_YB}{GA\_YB}}
+{\footnotesize\ttfamily \#define G\+A\+\_\+\+YB~30}
+
+\mbox{\Hypertarget{snake_8h_aece5497a579151a07721d5ddc9873e23}\label{snake_8h_aece5497a579151a07721d5ddc9873e23}} 
+\index{snake.h@{snake.h}!GA\_YT@{GA\_YT}}
+\index{GA\_YT@{GA\_YT}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{GA\_YT}{GA\_YT}}
+{\footnotesize\ttfamily \#define G\+A\+\_\+\+YT~5}
+
+\mbox{\Hypertarget{snake_8h_a437ef08681e7210d6678427030446a54}\label{snake_8h_a437ef08681e7210d6678427030446a54}} 
+\index{snake.h@{snake.h}!LEFT@{LEFT}}
+\index{LEFT@{LEFT}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{LEFT}{LEFT}}
+{\footnotesize\ttfamily \#define L\+E\+FT~75}
+
+\mbox{\Hypertarget{snake_8h_a5bb4257ca9fa4bfcf9391b7895b97761}\label{snake_8h_a5bb4257ca9fa4bfcf9391b7895b97761}} 
+\index{snake.h@{snake.h}!MAX\_LEVEL@{MAX\_LEVEL}}
+\index{MAX\_LEVEL@{MAX\_LEVEL}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_LEVEL}{MAX\_LEVEL}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+L\+E\+V\+EL~3}
+
+\mbox{\Hypertarget{snake_8h_a80fb826a684cf3f0d306b22aa100ddac}\label{snake_8h_a80fb826a684cf3f0d306b22aa100ddac}} 
+\index{snake.h@{snake.h}!RIGHT@{RIGHT}}
+\index{RIGHT@{RIGHT}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{RIGHT}{RIGHT}}
+{\footnotesize\ttfamily \#define R\+I\+G\+HT~77}
+
+\mbox{\Hypertarget{snake_8h_a1965eaca47dbf3f87acdafc2208f04eb}\label{snake_8h_a1965eaca47dbf3f87acdafc2208f04eb}} 
+\index{snake.h@{snake.h}!UP@{UP}}
+\index{UP@{UP}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{UP}{UP}}
+{\footnotesize\ttfamily \#define UP~72}
+
+
+
+Macros constants defined that are used throughout the code. 
+
+Contains all header files and functions required for the project.
+
+These defined constants are used for soft coding. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{snake_8h_ac0e5b7b5b4d698de3f31f6644ca0a94e}\label{snake_8h_ac0e5b7b5b4d698de3f31f6644ca0a94e}} 
+\index{snake.h@{snake.h}!coordinate@{coordinate}}
+\index{coordinate@{coordinate}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{coordinate}{coordinate}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcoordinate}{coordinate}} \mbox{\hyperlink{structcoordinate}{coordinate}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{snake_8h_a341d33c536d663703208ab568f7d1e0e}\label{snake_8h_a341d33c536d663703208ab568f7d1e0e}} 
+\index{snake.h@{snake.h}!delay@{delay}}
+\index{delay@{delay}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to control the game play speed. 
+
+This Function controls the speed of the snake in various levels.
+
+Function prototype to control the game play speed. \mbox{\Hypertarget{snake_8h_a04b6f773d8ae926a374397679e5f0cc3}\label{snake_8h_a04b6f773d8ae926a374397679e5f0cc3}} 
+\index{snake.h@{snake.h}!display\_scorecard@{display\_scorecard}}
+\index{display\_scorecard@{display\_scorecard}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{display\_scorecard()}{display\_scorecard()}}
+{\footnotesize\ttfamily void display\+\_\+scorecard (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to print the levels to display score. 
+
+This Function displays the various levels for highscore.
+
+Function prototype to print the levels to display score. \mbox{\Hypertarget{snake_8h_ad4f7d9fb0cfbf57a07e2d383f57fe83e}\label{snake_8h_ad4f7d9fb0cfbf57a07e2d383f57fe83e}} 
+\index{snake.h@{snake.h}!exit\_game@{exit\_game}}
+\index{exit\_game@{exit\_game}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{exit\_game()}{exit\_game()}}
+{\footnotesize\ttfamily void exit\+\_\+game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to exit the game. 
+
+This Function displays the exit menu and final score of that game.
+
+Function prototype to exit the game. \mbox{\Hypertarget{snake_8h_a7b1e0cd68f48011ba7d4f94d0d1411a5}\label{snake_8h_a7b1e0cd68f48011ba7d4f94d0d1411a5}} 
+\index{snake.h@{snake.h}!food@{food}}
+\index{food@{food}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{food()}{food()}}
+{\footnotesize\ttfamily void food (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to add food in the play area. 
+
+This Function places food at random places within the play area.
+
+Function prototype to add food in the play area. \mbox{\Hypertarget{snake_8h_a27113921347a82199b52e4f2ee16985c}\label{snake_8h_a27113921347a82199b52e4f2ee16985c}} 
+\index{snake.h@{snake.h}!game@{game}}
+\index{game@{game}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{game()}{game()}}
+{\footnotesize\ttfamily void game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to call the major functions and helps in the game play. 
+
+The actual game works here.
+
+Function prototype to call the major functions and helps in the game play.
+
+The game flow is taken care of here. \mbox{\Hypertarget{snake_8h_aabcee42f6dcb76a82b739a87c5ba0b56}\label{snake_8h_aabcee42f6dcb76a82b739a87c5ba0b56}} 
+\index{snake.h@{snake.h}!go\_down@{go\_down}}
+\index{go\_down@{go\_down}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{go\_down()}{go\_down()}}
+{\footnotesize\ttfamily void go\+\_\+down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to set the movement. 
+
+This Function controls the D\+O\+WN side movement.
+
+Function prototype to set the movement. \mbox{\Hypertarget{snake_8h_aa0222a65b5ab33b7f8c6909de0507790}\label{snake_8h_aa0222a65b5ab33b7f8c6909de0507790}} 
+\index{snake.h@{snake.h}!go\_left@{go\_left}}
+\index{go\_left@{go\_left}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{go\_left()}{go\_left()}}
+{\footnotesize\ttfamily void go\+\_\+left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to set the movement. 
+
+This Function controls the L\+E\+FT side movement.
+
+Function prototype to set the movement. \mbox{\Hypertarget{snake_8h_a1b1412fa5a776db37bdcdc23b29f7698}\label{snake_8h_a1b1412fa5a776db37bdcdc23b29f7698}} 
+\index{snake.h@{snake.h}!go\_right@{go\_right}}
+\index{go\_right@{go\_right}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{go\_right()}{go\_right()}}
+{\footnotesize\ttfamily void go\+\_\+right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to set the movement. 
+
+This Function controls the R\+I\+G\+HT side movement.
+
+Function prototype to set the movement. \mbox{\Hypertarget{snake_8h_ae1dcae83581b3a2f7192f6edb71dd46a}\label{snake_8h_ae1dcae83581b3a2f7192f6edb71dd46a}} 
+\index{snake.h@{snake.h}!go\_up@{go\_up}}
+\index{go\_up@{go\_up}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{go\_up()}{go\_up()}}
+{\footnotesize\ttfamily void go\+\_\+up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to set the movement. 
+
+This Function controls the UP side movement.
+
+Function prototype to set the movement. \mbox{\Hypertarget{snake_8h_a6748407c7eecc0cb6c8cd5108b9138d6}\label{snake_8h_a6748407c7eecc0cb6c8cd5108b9138d6}} 
+\index{snake.h@{snake.h}!goto\_xy@{goto\_xy}}
+\index{goto\_xy@{goto\_xy}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{goto\_xy()}{goto\_xy()}}
+{\footnotesize\ttfamily void goto\+\_\+xy (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Function prototype to move the cursor to specific position. 
+
+This Function places cursor at given coordinate position and takes Input parameters as x-\/coordinate and y-\/coordinate
+
+Function prototype to move the cursor to specific position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & X-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{snake_8h_a469646ef528afb750a06c95280797c59}\label{snake_8h_a469646ef528afb750a06c95280797c59}} 
+\index{snake.h@{snake.h}!gotoxy@{gotoxy}}
+\index{gotoxy@{gotoxy}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{gotoxy()}{gotoxy()}}
+{\footnotesize\ttfamily void gotoxy (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Function prototype to move the cursor to specific position. 
+
+This Function places cursor at given coordinate position and takes Input parameters as x-\/coordinate and y-\/coordinate
+
+Function prototype to move the cursor to specific position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & X-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{snake_8h_a5b2a08d249b80025a6d527f2c6d55255}\label{snake_8h_a5b2a08d249b80025a6d527f2c6d55255}} 
+\index{snake.h@{snake.h}!instructions@{instructions}}
+\index{instructions@{instructions}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{instructions()}{instructions()}}
+{\footnotesize\ttfamily void instructions (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to print insructions. 
+
+This Function prints the game play instructions for the User.
+
+Function prototype to print insructions. \mbox{\Hypertarget{snake_8h_ae2805afc2abfc8396c26f9f93d047a59}\label{snake_8h_ae2805afc2abfc8396c26f9f93d047a59}} 
+\index{snake.h@{snake.h}!level\_select@{level\_select}}
+\index{level\_select@{level\_select}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{level\_select()}{level\_select()}}
+{\footnotesize\ttfamily int level\+\_\+select (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to print the levels. 
+
+This Function displays the various levels for the user to play.
+
+Function prototype to print the levels.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em option} & Returns the level choice of the user. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{snake_8h_a11d83bf35f0346e4f579df0257171252}\label{snake_8h_a11d83bf35f0346e4f579df0257171252}} 
+\index{snake.h@{snake.h}!load@{load}}
+\index{load@{load}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void load (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to print the loading screen. 
+
+Function prototype to print the loading screen. \mbox{\Hypertarget{snake_8h_a219c351c9f40d16f05553c99a3b7e378}\label{snake_8h_a219c351c9f40d16f05553c99a3b7e378}} 
+\index{snake.h@{snake.h}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{main\_menu()}{main\_menu()}}
+{\footnotesize\ttfamily int main\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to print main menu. 
+
+This Function displays the various options for the user to select.
+
+Function prototype to print main menu.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em option} & The user selected choice. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{snake_8h_af7ee908605e816a3649c508395fd5509}\label{snake_8h_af7ee908605e816a3649c508395fd5509}} 
+\index{snake.h@{snake.h}!read\_line@{read\_line}}
+\index{read\_line@{read\_line}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{read\_line()}{read\_line()}}
+{\footnotesize\ttfamily char$\ast$ read\+\_\+line (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Function prototype to read score data. 
+
+This Function reads the score from the score data file.
+
+Function prototype to read score data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fp} & F\+I\+LE type pointer for the score data file. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & F\+I\+LE type pointer for the score data file. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pointer} & to the character which points to first character of line. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{snake_8h_a07a67d5a9e6f123a10846a17efbbe39f}\label{snake_8h_a07a67d5a9e6f123a10846a17efbbe39f}} 
+\index{snake.h@{snake.h}!score\_display@{score\_display}}
+\index{score\_display@{score\_display}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{score\_display()}{score\_display()}}
+{\footnotesize\ttfamily int score\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to print the live score. 
+
+This Function displays the score while in the game.
+
+Function prototype to print the live score.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em score} & Current game score \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{snake_8h_aedb18e254f5a1911705ef8552918294e}\label{snake_8h_aedb18e254f5a1911705ef8552918294e}} 
+\index{snake.h@{snake.h}!show\_high\_score\_by\_level@{show\_high\_score\_by\_level}}
+\index{show\_high\_score\_by\_level@{show\_high\_score\_by\_level}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{show\_high\_score\_by\_level()}{show\_high\_score\_by\_level()}}
+{\footnotesize\ttfamily void show\+\_\+high\+\_\+score\+\_\+by\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{for\+\_\+level,  }\item[{char}]{levelname\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function prototype to print the score data. 
+
+This Function displays the High Score from the score data file by levels.
+
+Function prototype to print the score data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em for\+\_\+level} & The level for which you want to display the scores \\
+\hline
+\mbox{\texttt{ in}}  & {\em levelname} & Name of Level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{snake_8h_a5247d7a062caccd090a7a0c63ff21a70}\label{snake_8h_a5247d7a062caccd090a7a0c63ff21a70}} 
+\index{snake.h@{snake.h}!snake@{snake}}
+\index{snake@{snake}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{snake()}{snake()}}
+{\footnotesize\ttfamily void snake (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype calls other functions to move the snake. 
+
+This Function manages the overall movement of the snake.
+
+Function prototype calls other functions to move the snake. \mbox{\Hypertarget{snake_8h_ac13ab8fc95fa47cc574dfc1faef020cb}\label{snake_8h_ac13ab8fc95fa47cc574dfc1faef020cb}} 
+\index{snake.h@{snake.h}!steer@{steer}}
+\index{steer@{steer}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{steer()}{steer()}}
+{\footnotesize\ttfamily void steer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to turn. 
+
+This Function controls movement.
+
+Function prototype to turn. \mbox{\Hypertarget{snake_8h_a701c2033e67037e3b5c490b8657dd3c8}\label{snake_8h_a701c2033e67037e3b5c490b8657dd3c8}} 
+\index{snake.h@{snake.h}!update\_data@{update\_data}}
+\index{update\_data@{update\_data}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{update\_data()}{update\_data()}}
+{\footnotesize\ttfamily void update\+\_\+data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to write score data. 
+
+This Function writes the new score to the score data file.
+
+Function prototype to write score data. \mbox{\Hypertarget{snake_8h_ab98fb7342c79dcdc77bd4cff7a4c365a}\label{snake_8h_ab98fb7342c79dcdc77bd4cff7a4c365a}} 
+\index{snake.h@{snake.h}!user\_display@{user\_display}}
+\index{user\_display@{user\_display}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{user\_display()}{user\_display()}}
+{\footnotesize\ttfamily void user\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype prints the User name in the game. 
+
+This Function displays the Player name while in the game.
+
+Function prototype prints the User name in the game. \mbox{\Hypertarget{snake_8h_a4bb5e3369395579d0ac078b34f09d4b3}\label{snake_8h_a4bb5e3369395579d0ac078b34f09d4b3}} 
+\index{snake.h@{snake.h}!username@{username}}
+\index{username@{username}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}}
+{\footnotesize\ttfamily void username (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to input the Player name. 
+
+This Function asks the user to enter the name.
+
+Function prototype to input the Player name. \mbox{\Hypertarget{snake_8h_a785d1036b66ff863c2e841fe9aeb7641}\label{snake_8h_a785d1036b66ff863c2e841fe9aeb7641}} 
+\index{snake.h@{snake.h}!wall@{wall}}
+\index{wall@{wall}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{wall()}{wall()}}
+{\footnotesize\ttfamily void wall (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prototype to display the defined boundary. 
+
+This Function displays the walls for the play area and the obstacles within it.
+
+Function prototype to display the defined boundary. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{snake_8h_a54ce08adae86f9b0fe42b9c55b544a4c}\label{snake_8h_a54ce08adae86f9b0fe42b9c55b544a4c}} 
+\index{snake.h@{snake.h}!body@{body}}
+\index{body@{body}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{body}{body}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcoordinate}{coordinate}} body\mbox{[}30\mbox{]}}
+
+\mbox{\Hypertarget{snake_8h_a6161fc1baccb04d46d3b3fe3521bb48f}\label{snake_8h_a6161fc1baccb04d46d3b3fe3521bb48f}} 
+\index{snake.h@{snake.h}!flg@{flg}}
+\index{flg@{flg}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{flg}{flg}}
+{\footnotesize\ttfamily int flg}
+
+\mbox{\Hypertarget{snake_8h_a06df0607f7760cff9d77c7579f9f8a33}\label{snake_8h_a06df0607f7760cff9d77c7579f9f8a33}} 
+\index{snake.h@{snake.h}!food\_location@{food\_location}}
+\index{food\_location@{food\_location}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{food\_location}{food\_location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcoordinate}{coordinate}} food\+\_\+location}
+
+\mbox{\Hypertarget{snake_8h_abe8d06e1e512add0a7806aaf6395349c}\label{snake_8h_abe8d06e1e512add0a7806aaf6395349c}} 
+\index{snake.h@{snake.h}!Head@{Head}}
+\index{Head@{Head}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{Head}{Head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcoordinate}{coordinate}} Head}
+
+\mbox{\Hypertarget{snake_8h_acad36f7a1211e9e9da68e181667d9c3f}\label{snake_8h_acad36f7a1211e9e9da68e181667d9c3f}} 
+\index{snake.h@{snake.h}!key@{key}}
+\index{key@{key}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily char key}
+
+\mbox{\Hypertarget{snake_8h_afed088663f8704004425cdae2120b9b3}\label{snake_8h_afed088663f8704004425cdae2120b9b3}} 
+\index{snake.h@{snake.h}!len@{len}}
+\index{len@{len}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily int len}
+
+\mbox{\Hypertarget{snake_8h_a9f59b34b1f25fe00023291b678246bcc}\label{snake_8h_a9f59b34b1f25fe00023291b678246bcc}} 
+\index{snake.h@{snake.h}!length@{length}}
+\index{length@{length}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily int length}
+
+\mbox{\Hypertarget{snake_8h_acf4d33ee4cff36f69b924471174dcb11}\label{snake_8h_acf4d33ee4cff36f69b924471174dcb11}} 
+\index{snake.h@{snake.h}!level@{level}}
+\index{level@{level}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int level}
+
+\mbox{\Hypertarget{snake_8h_ae5cb967283dbbdf75cb2032c1fa08fee}\label{snake_8h_ae5cb967283dbbdf75cb2032c1fa08fee}} 
+\index{snake.h@{snake.h}!name@{name}}
+\index{name@{name}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char name\mbox{[}50\mbox{]}}
+
+\mbox{\Hypertarget{snake_8h_a0bbc92c9c344d9c50aa438c4f597fa5d}\label{snake_8h_a0bbc92c9c344d9c50aa438c4f597fa5d}} 
+\index{snake.h@{snake.h}!turn@{turn}}
+\index{turn@{turn}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{turn}{turn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcoordinate}{coordinate}} turn\mbox{[}500\mbox{]}}
+
+\mbox{\Hypertarget{snake_8h_aa7e337a4c819594fdc15291afc061428}\label{snake_8h_aa7e337a4c819594fdc15291afc061428}} 
+\index{snake.h@{snake.h}!turn\_no@{turn\_no}}
+\index{turn\_no@{turn\_no}!snake.h@{snake.h}}
+\doxysubsubsection{\texorpdfstring{turn\_no}{turn\_no}}
+{\footnotesize\ttfamily int turn\+\_\+no}
+
