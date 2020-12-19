@@ -12,7 +12,7 @@
 */
 
 /* Includes the header file */
-#include "snake.h"
+#include "../include/snake.h"
 
 /**
 * @brief Initializing global variable and runs the 'game' function.
