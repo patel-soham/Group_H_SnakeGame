@@ -104,14 +104,16 @@ void snake(void);
 
 /**  @brief Function prototype to move the cursor to specific position
 *
-* This Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
+* This Function places cursor at given coordinate position 
+* and takes Input parameters as x-coordinate and y-coordinate
 *
 */
 void gotoxy(int,int);
 
 /**  @brief Function prototype to move the cursor to specific position
 *
-* This Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
+* This Function places cursor at given coordinate position 
+* and takes Input parameters as x-coordinate and y-coordinate
 *
 */
 void goto_xy(int,int);
