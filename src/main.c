@@ -1,5 +1,22 @@
+/**
+* @file snake.c
+*
+* Author          : Aditi Biswas 101193708
+*                   Tharun Merapala 101192727
+*   	            Soham Patel 101184663
+*                   Siddharth Ashish Upadhyaya 101207911
+* GitHub ID       : aditi-21, tharunmerapala, patel-soham, Siddharth-104.
+* Repository link : https://github.com/patel-soham/Group_H_SnakeGame.git
+* Language        : C
+*
+*/
+
+/* Includes the header file */
 #include "snake.h"
 
+/**
+* @brief Initializing global variable and runs the 'game' function.
+*/
 int main(void){
     length=0;
     turn_no=0;
@@ -9,6 +26,13 @@ int main(void){
     game();
     return 0;
 }
+
+/**
+* @brief This function calls the major functions and helps in the actual game play.
+*
+* The game flow is taken care of here.
+*
+*/
 void game(void){
     int i;
     if(flg==1){
@@ -40,7 +64,8 @@ void game(void){
         display_scorecard();
         goto l1;
     }
-    else{ // option = 1 i.e User wants to play game
+    /* option = 1, i.e User wants to play game */
+    else{
         system("cls");
         username();
         printf("\n%s",name);
@@ -55,14 +80,24 @@ void game(void){
         wall();
         score_display();
         user_display();
-        food(); //to generate food coordinates initially
+        /* Generates food coordinates initially */
+        food();
+        /* Initialing starting turn coordinate */
         turn[0]=Head;
-        snake();   //initialing initial turn coordinate
+        snake();
     }
 }
+
+/**
+* @brief The function displays the game's main menu.
+*
+* @param[out] option The user selected choice.
+*
+*/
 int main_menu(void){
     int option;
-    int max_trials=3; // Max number of trials for input
+    /* Max number of trials for the invalid input by the user */
+    int max_trials=3;
     do{
         system("cls");
         printf("/////////////Welcome to the SNAKE GAME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\n");
@@ -81,16 +116,24 @@ int main_menu(void){
     printf("\n\tGame exit because of consecutive invalid inputs!\n\n");
     exit(0);
 }
+
+/**
+* @brief Function prints the loading screen.
+*/
 void load(void){
     int r,q;
     gotoxy(36,14);
     printf("loading...");
     gotoxy(30,15);
     for(r=1;r<=30;r++){
-        for(q=0;q<=10000000;q++);//to display the character slowly
+        for(q=0;q<=10000000;q++);
         printf("%c",177);
     }
 }
+
+/**
+* @brief Function prints the game play instructions for the User.
+*/
 void instructions(void){
     system("cls");
     printf("/////////////Welcome to the SNAKE GAME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\n");
@@ -99,10 +142,17 @@ void instructions(void){
     printf("\n\nPress any key to return main menu...");
     getch();
 }
+
+/**
+* @brief Function displays the Walls for the play area and
+* the Obstacles within it depending upon the various levels.
+*
+*/
 void wall(void){
     system("cls");
-    int i;//wall_length=0;
-    goto_xy(food_location.x,food_location.y);   /*displaying food*/
+    int i;
+    /* Displaying Food */
+    goto_xy(food_location.x,food_location.y);
     printf("O");
     for(i=GA_XL;i<=GA_XR;i++){
         goto_xy(i,GA_YT);
@@ -116,16 +166,18 @@ void wall(void){
         goto_xy(GA_XR,i);
         printf("%c",176);
     }
+    /* Design for level 2 */
     if(level==2){
-        for(i=24;i<=56;i++){ //STATIC FOR LEVEL 2
+        for(i=24;i<=56;i++){
             goto_xy(i,11);
             printf("%c",'$');
             goto_xy(i,24);
             printf("%c",'$');
         }
     }
+    /* Design for level 3 */
     if(level==3){
-        for(i=25;i<=60;i++){ //STATIC FOR LEVEL 3
+        for(i=25;i<=60;i++){
             goto_xy(i,10);
             printf("%c",'$');
             goto_xy(i,23);
@@ -139,6 +191,11 @@ void wall(void){
         }
     }
 }
+
+/**
+* @brief Function places food at random places within the play area.
+* There will be only one Food at a particular moment.
+*/
 void food(void){
     l2:
     if(Head.x==food_location.x&&Head.y==food_location.y){
@@ -152,7 +209,8 @@ void food(void){
             food_location.y+=11;
         }
     }
-    else if(food_location.x==0){/*to create food for the first time */
+    /* To create food for the first time */
+    else if(food_location.x==0){
         food_location.x=rand()%GA_XR;
         if(food_location.x<=GA_XL){
             food_location.x+=11;
@@ -162,11 +220,15 @@ void food(void){
             food_location.y+=11;
         }
     }
-    //checking
     if ((level==2 && food_location.x>=24 && food_location.x<=56 && (food_location.y==11 || food_location.y==24)) || (level==3 && food_location.x>=25 && food_location.x<=60 && (food_location.y==10 || food_location.y==23))|| (level==3 && food_location.y>=15 && food_location.y<=18 && (food_location.x==18 || food_location.x==67))){
         goto l2;
     }
 }
+
+/**
+* @brief Function manages the overall movement of the snake.
+* It also call the other functions for the movement.
+*/
 void snake(void){
     int ch,i;
     do{
@@ -226,18 +288,33 @@ void snake(void){
         system("cls");
         exit(0);
     }
+    /* For making the Beep sound */
     else{
-        printf("\a");// for making beep sound
+        printf("\a");
         snake();
     }
 }
+
+/**
+* @brief Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
+*
+* @param[in] x X-coordinate
+* @param[in] y Y-coordinate
+*/
 void gotoxy(int x, int y){
     COORD temp;
     temp.X = x;
     temp.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),temp);
 }
-void goto_xy(int x, int y){ // to avoid game lag issues
+
+/**
+* @brief Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
+*
+* @param[in] x X-coordinate
+* @param[in] y Y-coordinate
+*/
+void goto_xy(int x, int y){
     HANDLE a;
     COORD b;
     fflush(stdout);
@@ -246,11 +323,21 @@ void goto_xy(int x, int y){ // to avoid game lag issues
     a = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleCursorPosition(a,b);
 }
+
+/**
+* @brief Function controls the speed of the snake in various levels.
+* Depending upon the levels, we have defined different speed for each which can be changed by the developer.
+*/
 void delay(void){
     long double i;
-    int level_wise_delays[]={8000000,9000000,10000000};//Change If you add new levels or delete existing levels
-    for(i=0;i<=(level_wise_delays[level-1]);i++);// to slow down the game play
+    /* Change if adding new levels or to change speeds for the levels */
+    int level_wise_delays[]={8000000,9000000,10000000};
+    for(i=0;i<=(level_wise_delays[level-1]);i++);
 }
+
+/**
+* @brief Function controls the UP side movement of the Snake.
+*/
 void go_up(void){
     int i;
     for(i=0;i<=(turn[turn_no].y-Head.y)&&len<length;i++){
@@ -270,6 +357,10 @@ void go_up(void){
         Head.y--;
     }
 }
+
+/**
+* @brief Function controls the DOWN side movement of the Snake.
+*/
 void go_down(void){
     int i;
     for(i=0;i<=(Head.y-turn[turn_no].y)&&len<length;i++){
@@ -289,6 +380,10 @@ void go_down(void){
         Head.y++;
     }
 }
+
+/**
+* @brief Function controls the LEFT side movement of the Snake.
+*/
 void go_left(void){
     int i;
     for(i=0;i<=(turn[turn_no].x-Head.x)&&len<length;i++){
@@ -308,10 +403,13 @@ void go_left(void){
         Head.x--;
     }
 }
+
+/**
+* @brief Function controls the RIGHT side movement of the Snake.
+*/
 void go_right(void){
     int i;
     for(i=0;i<=(Head.x-turn[turn_no].x)&&len<length;i++){
-        //goto_xy((Head.x-i),Head.y);
         body[len].x=Head.x-i;
         body[len].y=Head.y;
         goto_xy(body[len].x,body[len].y);
@@ -321,8 +419,6 @@ void go_right(void){
         else{
             printf("*");
         }
-        /*body[len].x=Head.x-i;
-        body[len].y=Head.y;*/
         len++;
     }
     steer();
@@ -330,6 +426,10 @@ void go_right(void){
         Head.x++;
     }
 }
+
+/**
+* @brief Function controls the turn movements of the Snake.
+*/
 void steer(void){
     int i,j,diff;
     for(i=turn_no;i>=0&&len<length;i--){
@@ -349,8 +449,6 @@ void steer(void){
                 }
                 else if(diff>0){
                     for(j=1;j<=diff;j++){
-                        /*goto_xy(turn[i].x,(turn[i].y-j));
-                        printf("*");*/
                         body[len].x=turn[i].x;
                         body[len].y=turn[i].y-j;
                         goto_xy(body[len].x,body[len].y);
@@ -366,8 +464,6 @@ void steer(void){
             diff=turn[i].x-turn[i-1].x;
             if(diff<0){
                 for(j=1;j<=(-diff)&&len<length;j++){
-                    /*goto_xy((turn[i].x+j),turn[i].y);
-                    printf("*");*/
                     body[len].x=turn[i].x+j;
                     body[len].y=turn[i].y;
                     goto_xy(body[len].x,body[len].y);
@@ -380,8 +476,6 @@ void steer(void){
             }
             else if(diff>0){
                 for(j=1;j<=diff&&len<length;j++){
-                    /*goto_xy((turn[i].x-j),turn[i].y);
-                    printf("*");*/
                     body[len].x=turn[i].x-j;
                     body[len].y=turn[i].y;
                     goto_xy(body[len].x,body[len].y);
@@ -396,6 +490,12 @@ void steer(void){
         }
     }
 }
+
+/**
+* @brief Function displays the score while in the game at the top.
+*
+* @param[out] score Current game score
+*/
 int score_display(void){
     int score;
     goto_xy(60,4);
@@ -409,11 +509,17 @@ int score_display(void){
     score=length-5;
     return score;
 }
+
+/**
+* @brief Function displays the exit menu and final score of that game.
+* The game will be exited, when the snake hits the Wall, Obstacles or even itself.
+*/
 void exit_game(void){
     int i,check=0;
-    for(i=4;i<length;i++){   //starts with 4 because it needs minimum 4 element to touch its own body
+    /* Starts with 4 character as it needs minimum 4 elements to touch its own body */
+    for(i=4;i<length;i++){
         if(body[0].x==body[i].x&&body[0].y==body[i].y){
-            check++;    //check's value increases as the coordinates of Head is equal to any other body coordinate
+            check++;
         }
         if(i==length||check!=0){
             break;
@@ -430,41 +536,61 @@ void exit_game(void){
         game();
     }
 }
+
+/**
+* @brief Function asks the user to enter the name.
+*/
 void username(void){
     printf("\nEnter Player Name: ");
     scanf("%s",&name);
 }
+
+/**
+* @brief Function displays the Player name entered by the user,
+* while in the game at the top.
+*/
 void user_display(void){
     goto_xy(GA_XR/2 -20,GA_YT-1);
     printf("user:%s",name);
 }
+
+/**
+* @brief Function reads the score from the score data file 'line-by-line'.
+*
+* @param[in] fp FILE type pointer for the score data file.
+* @param[in] buffer FILE type pointer for the score data file.
+* @param[out] pointer to the character which points to first character of line.
+*/
 char * read_line(FILE *fp, char *buffer){
     int ch;
     int i = 0;
     size_t buff_len = 0;
     buffer = malloc(buff_len + 1);
     if (!buffer){
-        return NULL;  // Out of memory
+        return NULL;
     }
     while ((ch = fgetc(fp)) != '\n' && ch != EOF){
         buff_len++;
         void *tmp = realloc(buffer, buff_len + 1);
         if (tmp == NULL){
             free(buffer);
-            return NULL; // Out of memory
+            return NULL;
         }
         buffer = tmp;
         buffer[i] = (char) ch;
         i++;
     }
     buffer[i] = '\0';
-    // Detect end
     if (ch == EOF && (i == 0 || ferror(fp))){
         free(buffer);
         return NULL;
     }
     return buffer;
 }
+
+/**
+* @brief Function writes the new score to the score data file.
+*/
 void update_data(void){
     int max=255;
     FILE * fp1;
@@ -476,17 +602,14 @@ void update_data(void){
     if (fp1 == NULL || fp2==NULL){
         exit(EXIT_FAILURE);
     }
-    //current_line=0;
     int finding_name_flag=1;
     char *s;
     while ((s = read_line(fp1, 0)) != NULL){
     char ds[max];
     strcpy(ds,s);
-    //printf("%s",ds);
     char * token = strtok(s, " ");
-    //comparing names of players
+    /* Comparing names of players */
     if(strcmp(token,name)==0 && finding_name_flag==1){
-        //#define MAX_LEVEL 3
         int player_scores[MAX_LEVEL]={0};
         int changed=0;
         for(int i=0;i<MAX_LEVEL;i++){
@@ -506,18 +629,17 @@ void update_data(void){
                 printf("Invalid Entry Found while storing Data");
                 fclose(fp1);
                 fclose(fp2);
-                //remove(temp) Should be added after testing
                 exit(1);
             }
         }
-        //checking if current score is higher
+        /* Checking if current score is higher */
         if(changed==1){
             char newln[max];
             strncpy(newln, "", sizeof(newln));
             strcat(newln,name);
             for(int i=0;i<MAX_LEVEL;i++){
                 strcat(newln," ");
-                char snum[8];//Below conversion depends on this
+                char snum[8];
                 itoa(player_scores[i],snum,10);
                 strcat(newln,snum);
             }
@@ -531,21 +653,18 @@ void update_data(void){
     else{
         fprintf(fp2, "%s", ds);
     }
-    //puts(s);
     free(s);free(ds);
     fprintf(fp2,"\n");
-    //printf("\n");
     }
     if (finding_name_flag==1){
         char newln[max];
         strncpy(newln, "", sizeof(s));
         strcat(newln,name);
-        //#define MAX_LEVEL 3
         int player_scores[MAX_LEVEL]={0};
         player_scores[level-1]=length-5;
         for(int i=0;i<MAX_LEVEL;i++){
                 strcat(newln," ");
-                char snum[8];//Below conversion depends on this
+                char snum[8];
                 itoa(player_scores[i],snum,10);
                 strcat(newln,snum);
         }
@@ -556,6 +675,10 @@ void update_data(void){
     remove(src);
     rename(temp, src);
 }
+
+/**
+* @brief Function displays the various levels for highscore.
+*/
 void display_scorecard(void){
     system("cls");
     printf("\t\tScorecard:\n");
@@ -565,6 +688,13 @@ void display_scorecard(void){
     printf("\n\n\nPress any key to return to Main Menu...");
     getch();
 }
+
+/**
+* @brief Function displays the High Score from the score data file according to the levels.
+*
+* @param[in] for_level The level for which you want to display the scores
+* @param[in] levelname Name of Level
+*/
 void show_high_score_by_level(int for_level,char levelname[]){
     printf("\n\nLevel-%s\n",levelname);
     int max=255;
@@ -575,7 +705,6 @@ void show_high_score_by_level(int for_level,char levelname[]){
     if (fp1 == NULL){
         exit(EXIT_FAILURE);
     }
-    //current_line=0;
     int indices[DEPTH]={0};
     for (int i=0;i<DEPTH;i++){
         fseek(fp1, 0, SEEK_SET);
@@ -589,7 +718,6 @@ void show_high_score_by_level(int for_level,char levelname[]){
             line++;
             int reject=0;
             for (int j=0;j<i;j++){
-                //printf("\n%d ,,,%d\n",indices[j],line);
                 if (line==indices[j]){
                     free(s);
                     reject=1;
@@ -621,12 +749,19 @@ void show_high_score_by_level(int for_level,char levelname[]){
     }
     fclose(fp1);
 }
+
+/**
+* @brief Function displays the various levels for the user to play.
+* The user will have to select from three options of the levels. Namely, Easy, Medium & Hard.
+*
+* @param[out] option Returns the level choice of the user.
+*/
 int level_select(void){
     int option;
-    int max_trials=3; // Max number of trials for input
+    /* Max number of trials for the invalid input by the user */
+    int max_trials=3;
     do{
         system("cls");
-        //printf("/////////////Welcome to the SNAKE GAME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\n");
         printf("               Level Selection\n");
         printf("1. Easy\n");
         printf("2. Medium\n");
