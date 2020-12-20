@@ -1,0 +1,371 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include \char`\"{}snake.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Initializing global variable and runs the \textquotesingle{}game\textquotesingle{} function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a27113921347a82199b52e4f2ee16985c}{game}} (void)
+\begin{DoxyCompactList}\small\item\em This function calls the major functions and helps in the actual game play. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a219c351c9f40d16f05553c99a3b7e378}{main\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em The function displays the game\textquotesingle{}s main menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a11d83bf35f0346e4f579df0257171252}{load}} (void)
+\begin{DoxyCompactList}\small\item\em Function prints the loading screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a5b2a08d249b80025a6d527f2c6d55255}{instructions}} (void)
+\begin{DoxyCompactList}\small\item\em Function prints the game play instructions for the User. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a785d1036b66ff863c2e841fe9aeb7641}{wall}} (void)
+\begin{DoxyCompactList}\small\item\em Function displays the Walls for the play area and the Obstacles within it depending upon the various levels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a7b1e0cd68f48011ba7d4f94d0d1411a5}{food}} (void)
+\begin{DoxyCompactList}\small\item\em Function places food at random places within the play area. There will be only one Food at a particular moment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a5247d7a062caccd090a7a0c63ff21a70}{snake}} (void)
+\begin{DoxyCompactList}\small\item\em Function manages the overall movement of the snake. It also call the other functions for the movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae824443b3f661414ba1f2718e17fe97d}{gotoxy}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Function places cursor at given coordinate position and takes Input parameters as x-\/coordinate and y-\/coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a2781a8594be0795c0f1e3481cb76be1d}{goto\+\_\+xy}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Function places cursor at given coordinate position and takes Input parameters as x-\/coordinate and y-\/coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a341d33c536d663703208ab568f7d1e0e}{delay}} (void)
+\begin{DoxyCompactList}\small\item\em Function controls the speed of the snake in various levels. Depending upon the levels, we have defined different speed for each which can be changed by the developer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae1dcae83581b3a2f7192f6edb71dd46a}{go\+\_\+up}} (void)
+\begin{DoxyCompactList}\small\item\em Function controls the UP side movement of the Snake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_aabcee42f6dcb76a82b739a87c5ba0b56}{go\+\_\+down}} (void)
+\begin{DoxyCompactList}\small\item\em Function controls the D\+O\+WN side movement of the Snake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_aa0222a65b5ab33b7f8c6909de0507790}{go\+\_\+left}} (void)
+\begin{DoxyCompactList}\small\item\em Function controls the L\+E\+FT side movement of the Snake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1b1412fa5a776db37bdcdc23b29f7698}{go\+\_\+right}} (void)
+\begin{DoxyCompactList}\small\item\em Function controls the R\+I\+G\+HT side movement of the Snake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ac13ab8fc95fa47cc574dfc1faef020cb}{steer}} (void)
+\begin{DoxyCompactList}\small\item\em Function controls the turn movements of the Snake. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a07a67d5a9e6f123a10846a17efbbe39f}{score\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em Function displays the score while in the game at the top. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ad4f7d9fb0cfbf57a07e2d383f57fe83e}{exit\+\_\+game}} (void)
+\begin{DoxyCompactList}\small\item\em Function displays the exit menu and final score of that game. The game will be exited, when the snake hits the Wall, Obstacles or even itself. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a4bb5e3369395579d0ac078b34f09d4b3}{username}} (void)
+\begin{DoxyCompactList}\small\item\em Function asks the user to enter the name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ab98fb7342c79dcdc77bd4cff7a4c365a}{user\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em Function displays the Player name entered by the user, while in the game at the top. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{main_8c_af7ee908605e816a3649c508395fd5509}{read\+\_\+line}} (F\+I\+LE $\ast$fp, char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Function reads the score from the score data file \textquotesingle{}line-\/by-\/line\textquotesingle{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a701c2033e67037e3b5c490b8657dd3c8}{update\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Function writes the new score to the score data file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a04b6f773d8ae926a374397679e5f0cc3}{display\+\_\+scorecard}} (void)
+\begin{DoxyCompactList}\small\item\em Function displays the various levels for highscore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_aedb18e254f5a1911705ef8552918294e}{show\+\_\+high\+\_\+score\+\_\+by\+\_\+level}} (int for\+\_\+level, char levelname\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function displays the High Score from the score data file according to the levels. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_ae2805afc2abfc8396c26f9f93d047a59}{level\+\_\+select}} (void)
+\begin{DoxyCompactList}\small\item\em Function displays the various levels for the user to play. The user will have to select from three options of the levels. Namely, Easy, Medium \& Hard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a341d33c536d663703208ab568f7d1e0e}\label{main_8c_a341d33c536d663703208ab568f7d1e0e}} 
+\index{main.c@{main.c}!delay@{delay}}
+\index{delay@{delay}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function controls the speed of the snake in various levels. Depending upon the levels, we have defined different speed for each which can be changed by the developer. 
+
+Function prototype to control the game play speed. \mbox{\Hypertarget{main_8c_a04b6f773d8ae926a374397679e5f0cc3}\label{main_8c_a04b6f773d8ae926a374397679e5f0cc3}} 
+\index{main.c@{main.c}!display\_scorecard@{display\_scorecard}}
+\index{display\_scorecard@{display\_scorecard}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{display\_scorecard()}{display\_scorecard()}}
+{\footnotesize\ttfamily void display\+\_\+scorecard (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function displays the various levels for highscore. 
+
+Function prototype to print the levels to display score. \mbox{\Hypertarget{main_8c_ad4f7d9fb0cfbf57a07e2d383f57fe83e}\label{main_8c_ad4f7d9fb0cfbf57a07e2d383f57fe83e}} 
+\index{main.c@{main.c}!exit\_game@{exit\_game}}
+\index{exit\_game@{exit\_game}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{exit\_game()}{exit\_game()}}
+{\footnotesize\ttfamily void exit\+\_\+game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function displays the exit menu and final score of that game. The game will be exited, when the snake hits the Wall, Obstacles or even itself. 
+
+Function prototype to exit the game. \mbox{\Hypertarget{main_8c_a7b1e0cd68f48011ba7d4f94d0d1411a5}\label{main_8c_a7b1e0cd68f48011ba7d4f94d0d1411a5}} 
+\index{main.c@{main.c}!food@{food}}
+\index{food@{food}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{food()}{food()}}
+{\footnotesize\ttfamily void food (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function places food at random places within the play area. There will be only one Food at a particular moment. 
+
+Function prototype to add food in the play area. \mbox{\Hypertarget{main_8c_a27113921347a82199b52e4f2ee16985c}\label{main_8c_a27113921347a82199b52e4f2ee16985c}} 
+\index{main.c@{main.c}!game@{game}}
+\index{game@{game}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{game()}{game()}}
+{\footnotesize\ttfamily void game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function calls the major functions and helps in the actual game play. 
+
+Function prototype to call the major functions and helps in the game play.
+
+The game flow is taken care of here. \mbox{\Hypertarget{main_8c_aabcee42f6dcb76a82b739a87c5ba0b56}\label{main_8c_aabcee42f6dcb76a82b739a87c5ba0b56}} 
+\index{main.c@{main.c}!go\_down@{go\_down}}
+\index{go\_down@{go\_down}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{go\_down()}{go\_down()}}
+{\footnotesize\ttfamily void go\+\_\+down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function controls the D\+O\+WN side movement of the Snake. 
+
+Function prototype to set the movement. \mbox{\Hypertarget{main_8c_aa0222a65b5ab33b7f8c6909de0507790}\label{main_8c_aa0222a65b5ab33b7f8c6909de0507790}} 
+\index{main.c@{main.c}!go\_left@{go\_left}}
+\index{go\_left@{go\_left}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{go\_left()}{go\_left()}}
+{\footnotesize\ttfamily void go\+\_\+left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function controls the L\+E\+FT side movement of the Snake. 
+
+Function prototype to set the movement. \mbox{\Hypertarget{main_8c_a1b1412fa5a776db37bdcdc23b29f7698}\label{main_8c_a1b1412fa5a776db37bdcdc23b29f7698}} 
+\index{main.c@{main.c}!go\_right@{go\_right}}
+\index{go\_right@{go\_right}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{go\_right()}{go\_right()}}
+{\footnotesize\ttfamily void go\+\_\+right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function controls the R\+I\+G\+HT side movement of the Snake. 
+
+Function prototype to set the movement. \mbox{\Hypertarget{main_8c_ae1dcae83581b3a2f7192f6edb71dd46a}\label{main_8c_ae1dcae83581b3a2f7192f6edb71dd46a}} 
+\index{main.c@{main.c}!go\_up@{go\_up}}
+\index{go\_up@{go\_up}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{go\_up()}{go\_up()}}
+{\footnotesize\ttfamily void go\+\_\+up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function controls the UP side movement of the Snake. 
+
+Function prototype to set the movement. \mbox{\Hypertarget{main_8c_a2781a8594be0795c0f1e3481cb76be1d}\label{main_8c_a2781a8594be0795c0f1e3481cb76be1d}} 
+\index{main.c@{main.c}!goto\_xy@{goto\_xy}}
+\index{goto\_xy@{goto\_xy}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{goto\_xy()}{goto\_xy()}}
+{\footnotesize\ttfamily void goto\+\_\+xy (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Function places cursor at given coordinate position and takes Input parameters as x-\/coordinate and y-\/coordinate. 
+
+Function prototype to move the cursor to specific position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & X-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_ae824443b3f661414ba1f2718e17fe97d}\label{main_8c_ae824443b3f661414ba1f2718e17fe97d}} 
+\index{main.c@{main.c}!gotoxy@{gotoxy}}
+\index{gotoxy@{gotoxy}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{gotoxy()}{gotoxy()}}
+{\footnotesize\ttfamily void gotoxy (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Function places cursor at given coordinate position and takes Input parameters as x-\/coordinate and y-\/coordinate. 
+
+Function prototype to move the cursor to specific position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & X-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a5b2a08d249b80025a6d527f2c6d55255}\label{main_8c_a5b2a08d249b80025a6d527f2c6d55255}} 
+\index{main.c@{main.c}!instructions@{instructions}}
+\index{instructions@{instructions}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{instructions()}{instructions()}}
+{\footnotesize\ttfamily void instructions (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prints the game play instructions for the User. 
+
+Function prototype to print insructions. \mbox{\Hypertarget{main_8c_ae2805afc2abfc8396c26f9f93d047a59}\label{main_8c_ae2805afc2abfc8396c26f9f93d047a59}} 
+\index{main.c@{main.c}!level\_select@{level\_select}}
+\index{level\_select@{level\_select}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{level\_select()}{level\_select()}}
+{\footnotesize\ttfamily int level\+\_\+select (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function displays the various levels for the user to play. The user will have to select from three options of the levels. Namely, Easy, Medium \& Hard. 
+
+Function prototype to print the levels.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em option} & Returns the level choice of the user. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a11d83bf35f0346e4f579df0257171252}\label{main_8c_a11d83bf35f0346e4f579df0257171252}} 
+\index{main.c@{main.c}!load@{load}}
+\index{load@{load}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void load (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function prints the loading screen. 
+
+Function prototype to print the loading screen. \mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializing global variable and runs the \textquotesingle{}game\textquotesingle{} function. 
+
+\mbox{\Hypertarget{main_8c_a219c351c9f40d16f05553c99a3b7e378}\label{main_8c_a219c351c9f40d16f05553c99a3b7e378}} 
+\index{main.c@{main.c}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main\_menu()}{main\_menu()}}
+{\footnotesize\ttfamily int main\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The function displays the game\textquotesingle{}s main menu. 
+
+Function prototype to print main menu.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em option} & The user selected choice. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_af7ee908605e816a3649c508395fd5509}\label{main_8c_af7ee908605e816a3649c508395fd5509}} 
+\index{main.c@{main.c}!read\_line@{read\_line}}
+\index{read\_line@{read\_line}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{read\_line()}{read\_line()}}
+{\footnotesize\ttfamily char$\ast$ read\+\_\+line (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Function reads the score from the score data file \textquotesingle{}line-\/by-\/line\textquotesingle{}. 
+
+Function prototype to read score data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fp} & F\+I\+LE type pointer for the score data file. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & F\+I\+LE type pointer for the score data file. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pointer} & to the character which points to first character of line. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a07a67d5a9e6f123a10846a17efbbe39f}\label{main_8c_a07a67d5a9e6f123a10846a17efbbe39f}} 
+\index{main.c@{main.c}!score\_display@{score\_display}}
+\index{score\_display@{score\_display}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{score\_display()}{score\_display()}}
+{\footnotesize\ttfamily int score\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function displays the score while in the game at the top. 
+
+Function prototype to print the live score.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em score} & Current game score \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_aedb18e254f5a1911705ef8552918294e}\label{main_8c_aedb18e254f5a1911705ef8552918294e}} 
+\index{main.c@{main.c}!show\_high\_score\_by\_level@{show\_high\_score\_by\_level}}
+\index{show\_high\_score\_by\_level@{show\_high\_score\_by\_level}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{show\_high\_score\_by\_level()}{show\_high\_score\_by\_level()}}
+{\footnotesize\ttfamily void show\+\_\+high\+\_\+score\+\_\+by\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{for\+\_\+level,  }\item[{char}]{levelname\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function displays the High Score from the score data file according to the levels. 
+
+Function prototype to print the score data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em for\+\_\+level} & The level for which you want to display the scores \\
+\hline
+\mbox{\texttt{ in}}  & {\em levelname} & Name of Level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a5247d7a062caccd090a7a0c63ff21a70}\label{main_8c_a5247d7a062caccd090a7a0c63ff21a70}} 
+\index{main.c@{main.c}!snake@{snake}}
+\index{snake@{snake}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{snake()}{snake()}}
+{\footnotesize\ttfamily void snake (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function manages the overall movement of the snake. It also call the other functions for the movement. 
+
+Function prototype calls other functions to move the snake. \mbox{\Hypertarget{main_8c_ac13ab8fc95fa47cc574dfc1faef020cb}\label{main_8c_ac13ab8fc95fa47cc574dfc1faef020cb}} 
+\index{main.c@{main.c}!steer@{steer}}
+\index{steer@{steer}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{steer()}{steer()}}
+{\footnotesize\ttfamily void steer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function controls the turn movements of the Snake. 
+
+Function prototype to turn. \mbox{\Hypertarget{main_8c_a701c2033e67037e3b5c490b8657dd3c8}\label{main_8c_a701c2033e67037e3b5c490b8657dd3c8}} 
+\index{main.c@{main.c}!update\_data@{update\_data}}
+\index{update\_data@{update\_data}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{update\_data()}{update\_data()}}
+{\footnotesize\ttfamily void update\+\_\+data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function writes the new score to the score data file. 
+
+Function prototype to write score data. \mbox{\Hypertarget{main_8c_ab98fb7342c79dcdc77bd4cff7a4c365a}\label{main_8c_ab98fb7342c79dcdc77bd4cff7a4c365a}} 
+\index{main.c@{main.c}!user\_display@{user\_display}}
+\index{user\_display@{user\_display}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{user\_display()}{user\_display()}}
+{\footnotesize\ttfamily void user\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function displays the Player name entered by the user, while in the game at the top. 
+
+Function prototype prints the User name in the game. \mbox{\Hypertarget{main_8c_a4bb5e3369395579d0ac078b34f09d4b3}\label{main_8c_a4bb5e3369395579d0ac078b34f09d4b3}} 
+\index{main.c@{main.c}!username@{username}}
+\index{username@{username}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}}
+{\footnotesize\ttfamily void username (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function asks the user to enter the name. 
+
+Function prototype to input the Player name. \mbox{\Hypertarget{main_8c_a785d1036b66ff863c2e841fe9aeb7641}\label{main_8c_a785d1036b66ff863c2e841fe9aeb7641}} 
+\index{main.c@{main.c}!wall@{wall}}
+\index{wall@{wall}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{wall()}{wall()}}
+{\footnotesize\ttfamily void wall (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function displays the Walls for the play area and the Obstacles within it depending upon the various levels. 
+
+Function prototype to display the defined boundary. 
