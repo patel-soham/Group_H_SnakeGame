@@ -1,10 +1,33 @@
-#include "snake.h"
+/**
+* @file snake.c
+*
+* Author          : Aditi Biswas 101193708
+*                   Tharun Merapala 101192727
+*   	            Soham Patel 101184663
+*                   Siddharth Ashish Upadhyaya 101207911
+* GitHub ID       : aditi-21, tharunmerapala, patel-soham, Siddharth-104.
+* Repository link : https://github.com/patel-soham/Group_H_SnakeGame.git
+* Language        : C
+*
+*/
 
+/* Includes the header file */
+#include "../include/snake.h"
+
+/**
+* @brief Initializing global variable and runs the 'game' function.
+*/
 int main(void){
 	game();
 	return 0;
 }
 
+/**
+* @brief This function calls the major functions and helps in the actual game play.
+*
+* The game flow is taken care of here.
+*
+*/
 void game(void)
 {
     int i;
@@ -35,7 +58,7 @@ void game(void)
             goto l1;
     }
 
-    else // mm = 1 i.e User wants to play game
+    else 
     {
     system("cls");
 
@@ -52,15 +75,20 @@ void game(void)
     Wall();
     Score_display();
 
-    Food(); //to generate food coordinates initially
+    Food(); 
 
     turn[0]=Head;
 
-    Snake();   //initialing initial turn coordinate
+    Snake();   
     }
 
 }
 
+/**
+* @brief Function displays the Walls for the play area and
+* the Obstacles within it depending upon the various levels.
+*
+*/
 void Wall(void)
 {
    system("cls");
@@ -83,6 +111,12 @@ void Wall(void)
    }
 }
 
+/**
+* @brief The function displays the game's main menu.
+*
+* @param[out] option The user selected choice.
+*
+*/
 int main_menu(void){
     int ch;
     int i=3; 
@@ -103,6 +137,9 @@ int main_menu(void){
     exit(0);
 }
 
+/**
+* @brief Function prints the loading screen.
+*/
 void load(){
     int r,q;
     gotoxy(36,14);
@@ -112,6 +149,10 @@ void load(){
     for(q=0;q<=10000000;q++);
     printf("%c",177);}
 }
+
+/**
+* @brief Function prints the game play instructions for the User.
+*/
 void instructions()
 {
     system("cls");
@@ -122,6 +163,12 @@ void instructions()
     getch();
 }
 
+/**
+* @brief Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
+*
+* @param[in] x X-coordinate
+* @param[in] y Y-coordinate
+*/
 void gotoxy(int x, int y)
 {
 
@@ -134,6 +181,13 @@ void gotoxy(int x, int y)
  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), temp);
 
 }
+
+/**
+* @brief Function places cursor at given coordinate position and takes Input parameters as x-coordinate and y-coordinate
+*
+* @param[in] x X-coordinate
+* @param[in] y Y-coordinate
+*/
 void GotoXY(int x, int y) // to avoid game lag issues
 {
     HANDLE a;
@@ -145,12 +199,20 @@ void GotoXY(int x, int y) // to avoid game lag issues
     SetConsoleCursorPosition(a,b);
  }
 
+/**
+* @brief Function controls the speed of the snake in various levels.
+* Depending upon the levels, we have defined different speed for each which can be changed by the developer.
+*/
 void Delay(void)
 {
     long double i;
     for(i=0;i<=(Game_delay);i++);// to slow down the game play
 }
 
+/**
+* @brief Function places food at random places within the play area.
+* There will be only one Food at a particular moment.
+*/
 void Food(void)
 {
     if(Head.x==food.x&&Head.y==food.y)
@@ -174,6 +236,11 @@ void Food(void)
     }
 }
 
+/**
+* @brief Function displays the score while in the game at the top.
+*
+* @param[out] score Current game score
+*/
 int Score_display(void)
 {
    int score;
@@ -187,6 +254,10 @@ int Score_display(void)
    return score;
 }
 
+/**
+* @brief Function displays the exit menu and final score of that game.
+* The game will be exited, when the snake hits the Wall, Obstacles or even itself.
+*/
 void ExitGame(void)
 {
     int i,check=0;
@@ -213,6 +284,10 @@ void ExitGame(void)
 
     }
 }
+
+/**
+* @brief Function controls the UP side movement of the Snake.
+*/
 void Go_Up()
 {
    int i;
@@ -233,6 +308,10 @@ void Go_Up()
    if(!kbhit())
        Head.y--;
 }
+
+/**
+* @brief Function controls the DOWN side movement of the Snake.
+*/
 void Go_Down()
 {
     int i;
@@ -253,6 +332,10 @@ void Go_Down()
     if(!kbhit())
         Head.y++;
 }
+
+/**
+* @brief Function controls the LEFT side movement of the Snake.
+*/
 void Go_Left()
 {
     int i;
@@ -274,6 +357,10 @@ void Go_Left()
         Head.x--;
 
 }
+
+/**
+* @brief Function controls the Right side movement of the Snake.
+*/
 void Go_Right()
 {
     int i;
@@ -297,6 +384,9 @@ void Go_Right()
     if(!kbhit())
         Head.x++;
 }
+/**
+* @brief Function controls the turn movements of the Snake.
+*/
 void Turn()
 {
     int i,j,diff;
@@ -362,6 +452,11 @@ void Turn()
        }
    }
 }
+
+/**
+* @brief Function manages the overall movement of the snake.
+* It also call the other functions for the movement.
+*/
 void Snake()
 {
     int a,i;
