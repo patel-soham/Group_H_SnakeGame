@@ -1,14 +1,14 @@
-## Group_H_SnakeGame
+## Group H- SnakeGame
 The main goal of the project is to re-create that most popular "SNAKE" game to entertain the users in a user-friendly manner which is written in C programming language.
 
 ## Organisation
-Carleton University, Ottawa, Ontario, Canada 
+Carleton University, Ottawa, Ontario, Canada. 
 
 ## Authors
-Tharun Merapala tharunmerapala@cmail.carleton.ca  
-Soham Patel sohampatel@cmail.carleton.ca  
+Aditi Biswas aditibiswas@cmail.carleton.ca 
 Siddharth Ashish Upadhyaya siddharthashishupad@cmail.carleton.ca  
-Aditi Biswas aditibiswas@cmail.carleton.ca  
+Soham Patel sohampatel@cmail.carleton.ca  
+Tharun Merapala tharunmerapala@cmail.carleton.ca    
 
 ## Brief Description
 The objective of the game is to guide the moving 'Snake' towards the 'Food' placed over random positions in a bounded area. The bounded area is considered as 'wall'. While guiding the 'Snake', the player has to make the 'Snake' avoid 3 things to continue the game and earn points:
@@ -36,7 +36,7 @@ Instructions to install can be found in-
 https://github.com/dikshasaini11/Group_E_Snakes_and_Ladders/blob/Main_Development/doc/User_Manual.docx   
 
 ## Usage
-Beffore playing the game, game has to be installed. The instalation process is given in details in in-    
+Before playing the game, game has to be installed. The instalation process is given in details in in-    
 (have to change)  
 https://github.com/dikshasaini11/Group_E_Snakes_and_Ladders/blob/Main_Development/doc/User_Manual.docx  
 
