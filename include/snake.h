@@ -163,7 +163,7 @@ void Turn(void);
 * This Function displays the score while in the game.
 *
 */
-int Score_Display(void);
+int Score_display(void);
 
 /**  @brief Function prototype to exit the game.
 *
