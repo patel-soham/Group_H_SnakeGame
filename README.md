@@ -5,7 +5,7 @@ The main goal of the project is to re-create that most popular "SNAKE" game to e
 Carleton University, Ottawa, Ontario, Canada. 
 
 ## Authors
-Aditi Biswas aditibiswas@cmail.carleton.ca 
+Aditi Biswas aditibiswas@cmail.carleton.ca  
 Siddharth Ashish Upadhyaya siddharthashishupad@cmail.carleton.ca  
 Soham Patel sohampatel@cmail.carleton.ca  
 Tharun Merapala tharunmerapala@cmail.carleton.ca    
