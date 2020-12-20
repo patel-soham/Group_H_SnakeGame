@@ -28,22 +28,20 @@ The top three high scores of each level will be displayed in the scorecard from 
 
 3. include: This folder contains header files used in application.
 
-4. obj: This folder has all the object files generated using make file.  
+4. build: This folder has all the object files generated using make file.  
 
 4. src: This file contains the source code for the project with other .c files.
 
 ## Installation
 Before playing the game, it has to be installed. The instalation process is given in details in -     
-(have to change)  
-https://github.com/dikshasaini11/Group_E_Snakes_and_Ladders/blob/Main_Development/doc/User_Manual.docx    
-
+https://github.com/patel-soham/Group_H_SnakeGame/blob/adi_dev/doc/User%20Manual.pdf 
+   
 ## Detailed Instructions
 Detailed instructions for user can be found here -    
-(have to change)  
-https://github.com/dikshasaini11/Group_E_Snakes_and_Ladders/blob/Main_Development/doc/User_Manual.docx  
+https://github.com/patel-soham/Group_H_SnakeGame/blob/adi_dev/doc/User%20Manual.pdf 
+ 
 Detailed instructions for developer can be found here -  
-(have to change)  
-https://github.com/dikshasaini11/Group_E_Snakes_and_Ladders/blob/Main_Development/doc/Developer_Guide.docx  
+https://github.com/patel-soham/Group_H_SnakeGame/blob/adi_dev/doc/Developer%20Manual.pdf
 
 ## Acknowledgement
 All thanks goes to our respected course instructor Dr. Cristina Ruiz Martin.  
